@@ -1,0 +1,482 @@
+\n
+test thought
+testing the note thing
+
+
+
+
+
+
+
+
+
+
+
+
+Come up with an example of a mind puzzle, the logic riddle, to describe what the acid trip was like. The most absurd situation where every possible move would lead to something seemingly horrible and make you out to be a horrible person, because others can't see the internal situation as you can. It has something to do with language and the physical structures and vibrational subdivisions of which it is composed.
+
+
+test
+test 2test 3
+
+asfda;lkdfnalksdf
+asfda;lkdfnalksdf\n
+
+ad;lknasdf
+
+gxcvbxcv
+
+
+
+
+
+
+
+
+
+
+
+
+Server requirements:
+   I can use ssh, http, and some other ports on my devices (possibly via up)
+   Ability to allow a new IP address, even if I dont have a currently allowed one
+   All other ips are blacklisted
+
+
+
+
+
+Everyhing is a song,
+Thoughts are pointers
+To lower level phenomena,
+Concepts, patterns of the past,
+Visions of the future.
+Strange when one's mind has been obfuscating the true meaning behind (underlying?) the pointers, always changing the depth of the abstractions and the quality of semantics at any given level. 
+Maybe this is how it must be,
+If technology is destined to truly enable the transcendence over shitty social and governmental forms, to beat the entropy,
+This algorithm takes any syllable almost uttered and finds the path of semantics triggering which leads to the worst case if one's utterance was cause by such an imagined scenario.
+
+
+
+
+
+the earth is a playground, and we humans have words to use to tell ourselves what we don't have to pay attention to. to ignore the tide of our individuality slipping away.
+fix $fileHTML in c.blade.php
+add infinite radius checkbox
+copy croak content
+android app linkify  https://pub.dev/packages/flutter_linkify
+underscore suggestion
+
+
+Home screen separate d into categories: title, radius (root and reply), tags (include and exclude), other settings. Scrollable
+
+Loading screen for replying
+
+Render score and vote buttons
+
+Hourly notification which checks for replies
+
+
+
+
+At the end of the day, we are left with our thoughts, our skills, our ideals, goals, intentions, desires. We are left with a column of energetic structures which has certain imbalances this affecting our bodies in some ways.
+
+Some know what it means to sing to God and to curse God. To cry for meaning or direction.
+"the world we live in is a living world where mind is in a constant state of emergence and that world is under threat and we need to do something to connect ourselves to that... in some sense, we're entering into a planetary depression where our less-expansive forms of thinking are leading us to treat these living spaces as resources and not regeneration of a kind of emergent mind. their message is say "look, these are places of possibility and to continue to have a possibility as a human species we need to be able to connect with these places and to preserve the possibility of connecting with these places. " - Eduardo Kohn
+
+points from fear innoculum, first listen:
+	- i don't see as much colors/visuals with eyes closed any more. in fact, barely any
+	- i need to reconnect with the truth i used to follow so hard
+	- i should try some psychedelics again
+	- (album critique: felt like they never reached a climax)
+	- there's something in my head (manifested as palatal myoclonus) that i'm holding on to, and i can't relax my face like i used to
+
+
+upward jobs
+tutoring ads
+
+
+finish resume
+apply for jobs
+notifications frogpond
+A job is something to do each day in the world -- something to contribute to a "betterment of the state of things". It is either that or a contribution to maintenance of the status quo, upholding existing values, models, and behaviors. 
+I need to remember to not be worried about not getting a job, because there are things I can do in the world which are quite valuable, though I might not get paid much for it. This is ok because it is creative work which attempts to bring forth a vision of the future which is more ideal because it uses actual present scientific knowledge. 
+
+I need to let go of my ego. Holding on to it is a fight against entropy which only causes more turmoil for those around me.
+
+today is sunday. started off by starting rendering of the footage i took of last night's shenanigans. then walked to state gym to pick up my car because i missed the bus. then went to pammel to get groceries. talked to the cashier a bit about the zuchinni curry. dropped a glass jar of pickled carrot i bought. then realized it was the last jar. saw a young kid looking around the store for something. had a thought that was like "damn, that's the last one. ", then thought about young kids in poverty who would say those same words but the situation would actually be more dire. it seemed like a karma realization or something.
+today i have decided to do some life planning. i will do this as i play doom. i will also think about what to do for tailgaiting next weekend. this should help my mind sort itself out more.
+
+https://imgur.com/gallery/25Kx3pT
+
+my creativity could be so much higher. i'm just sitting here tonight paying attention to that. thinking about how i've been spending my time and what keeps me away from it. 
+what is taste? what is it that makes the experience of tasting certain tastes so good? and how is this related to the words running through my head? and might as well ask how it relates to musical structures also.
+
+energy in upper body, potential to do something which could be considered productive, but a desire to immerse myself in a virtual world instead. i think i'm just running from the words in my head. 
+
+waiting around for me to feel creative again, so i can play piano and start to compose something. *sigh. it's just something with the chakras. weird perceptions of some structures of waves, but lacking a clear coherant vision of an ordered goal.
+a being i am, 
+
+puzzles. puzzles to solve, things to do, food to be digested, matter to be organized.
+i have a body in this physical world, muscles with the potential to incur kinetic energy upon material things.
+see i could do more to reach the bounds of the world that this ego inhabits, to discover what the self truly completely is.
+there are forces which want me to remain acting in this human-social world, clinging to the manifestation of forms which allow me to continue on my pleasure wheel of sex and taste and power.
+but i want to explore what can be discovered to be true up here in the highest chakras, the highest points of consciousness. how can they maintain their existence? 
+
+yes, we still live in a type of a matrix; i'm contemplating if there's anything that should be done about it. i do need to establish something better to do with my time each day, because i've been a little too sedentary. one dilemma i have is that i don't want my activity out in the world to just serve me, for example running/lifting, because i'm just a point of perception which likes to experience certain things. i sense that people need good music, and i mean that in the most general sense. to what extent should i go out and play drums? should i go downtown more just to talk to people?
+
+
+get shrooms from jam tomorrow and figure out microdosing plan. 
+
+highly sensitive people are the psychadelics of the human world
+
+
+FP: FeedScreen
+	on create:
+		fetch croaks from server if haven't refreshed with current configuration for a while, otherwise load saved croaks
+			(use variable localCroaksUpdated. set to false whenever query changes or timeout has passed)
+	on build:
+		if still fetching: show loading screen
+		if got croaks: show feed
+		if failed: show error screen
+		
+	fetchCroaks:
+		maybe timeout check should be here instead of in util
+		this method is decoupled from the store, so that it can be called before widget build
+		
+	#don't think that feed needs to update the appstate.
+	
+	CroakDetail
+		add a switch to subscribe to croak one-level comments or recursive
+		save comments to db
+	db
+		re-check initialization, make sure save/load works,
+		
+	util.checkSubscriptionUpdates:
+		compare num replies of local vs server of each subscribed-to croak; if not equal, add given croak to notify list
+		send notification showing each croak which has new comments
+		
+	NotificationScreen
+		this is similar to FeedScreen, but it takes a list of croaks (the ones of which the user must be notified)
+		this might be added as new functionality to FeedScreen
+
+Butters 352
+The terror
+Fri 13th
+Sinister
+The crazies
+Elm Street
+Behind the mask
+microdose sometime while in mn or when back in ames, or cabin. think about possibility of joining an ecovillage, travelling minimally, or something like that. think about what to do given the fact of the rainforests burning. what to do from a survival perspective.
+I'm in this interesting state, looking for a job, where I'm not doing much, but I feel that as a competent and fit young man I am capable of much more. And there are many things that I could do without having to have a job first.
+How many are wasting their time looking for a job, perhaps taking a blue collar job in the meantime? There is obviously other stuff that could be done which isn't demanded by any current job. People need to see the potential. I could go on with what people should do, but it's better to focus on what I should do, how I can make myself into not a lazy piece of shit (though I don't actually think I currently am, with everything I do). I could go out and provide space for open discussion and I could play drums and chant mantras for people (drum circle when?). I need to remember my insights I've had into the energy of the sun. 
+But the matter of concern is how I can get into a daily routine where I contribute to this positive upward-moving motion towards a better world, while I don't have a job. It would probably start with getting more involved with Helen's garden and talking to the food forest people more. I also need to keep a vision in mind with frogpond. Actually while in mn I should write out a full vision, because I honestly want to get this thing done and be able to spend most of my time outside. 
+I will remember to not get too caught up in some ideal vision and just feel the sun energy permeating everything and see the cool dance that it really all is.
+
+
+
+
+
+Morning at the farmers market, so many people out and about, trying to enjoy this existence. There are some musicians there. Music is what we need. Next week I will bring my djembe.
+
+F@f volunteer 1/week
+Learn about upanishads/Vedic stuff
+
+
+More meaningful dreams. I had dez and Carlos on my mind. For whatever reason, I felt like Im kind of letting them down. I dreamed I was in some crowd of stupid people and one was messing with me then ran at me then it was hard to breath then j saw someone across the room who seemed more familiar I think. It made me grateful for the people that care for me in my life. There is something to be said for this amount of consciousness we have and it shouldn't be assumed it will stay this way, because if we ignore each other it will drift away. I just need to figure out how to be best use my time and get over the stupid syllables and get to work. But also do some long term planning his I'll get plugged into effective operations will people in the future. Reliable st, Oran mor, possibly permanence project, other Eco villages, joes garden
+Feel a strange feeling, like the being that gave me the faculty for making creation and understanding wants me to come back to it with something if benefit, to make the effort worth it. I feel like I'm wasting away or something and neglecting people
+
+
+
+
+
+Of course the mind would play tricks on itself. Of course it would hold on to such an absurd and undesirable thought.
+"shadilay temple"?: A building with a bunch of rooms to walk through, almost like a haunted house except there are random videos from the internet playing on walls. (Some categorization system). Also trippy lighting. Other rooms with music and dancing, food, drugs, space observatory (telescope), gaming room. 
+Point is to show the culmination of what the internet and digital tech has enabled.
+
+
+I should get into a state where I have to use the technology for maximum benefit, seeing beyond current political structures, I think. I used to be like that and that's why I dropped out of college. 
+Now there seems to be a cognitive dissonance and I need to get over it.
+
+2019.10.7 
+
+Well, college has come and gone. I'm in that limbo period between graduating and getting a job. This is a time when most, it seems, are swept away by the rush of hurrying to find a job. My eyes are open, however, and I look around and see the world as it is around me. I hear the birds chirping and singing each morning, I see them fly above us and our cities, and I see the sun rise between buildings and over the storefront. I perceive -- grok, if you will -- the happening of phenomena beyond the scope of daily human activity. 
+Such a complex of activity, held together by language and technology which is sustained by the will of enough of us to keep living and enjoying. Looking at the direction of things, however, one can see that our culture is currently operating under an imbalanced relationship with most of the other natural ecosystems with which it coinhabits the planet. 
+
+Part of me has to seriously believe that we have already figured everything out, perhaps inhabitated multiple galaxies, and that we merely put ourselves into simulations for fun. 
+
+Driving early this morning, remembering my vivid and intense dreams from the night before, I reminisced about my college memories: dorm life, environmental activism, playing music, coover TLA. I didn't think much about dropping out and all related things, however, as I wanted to think more of the friends I've made and my relationships with them. I thought of how all the dorm buddies are now separated and we may never come together as a group again. I wondered if I neglected a little too much that tribe when I lived with them in my pursuit of revolution and rebellion and deeper meaning and fixing all of society's problems. 
+
+There's a certain aesthetic which I find so beautiful.
+
+
+
+Ideas:
+Replace car engines with electric engines
+Electronics recycling center
+Study Mao
+
+
+
+some of us have our heads stuck up in these info machines, ignoring the physical biological world. but there is something amazing about it, i think as i smoke outside in a cool and mildly calm rain, that us friends from high school can connect through a game -- alternate reality -- through the internet, with communication at near-instant speed. 
+
+the potential of this human mind...
+
+
+
+
+
+
+
+yes, i feel bad about the state of things on this planet, about our behavior, about how i am a part of all that. i think of how i can better myself to make the "correct" choices. i see how i'm attached to things and that this attachment is probably what's keeping things from going better. i'm using too vague of language here. i know that i'm talking about the climate and ecological situation here. i'm talking about how humanity can live sustainably. because we're going to continue to eat food, build buildings, travel, use electronic communication systems. 
+
+i'm attached to my computer stuff. i don't want to give up this "high tech" possibilities; i think that computers and internet can do a lot of good for sustainability. i have a lot on my mind too; energy up in my head that needs to get out. i just need to give myself the time to get things together. 
+
+
+
+god, these herbs... i can only be so grateful
+
+-------
+the middle -- the best way. it is so easy to see now. after a night of hangin out but not too late and didn't drink more than 2 drinks. 
+since i wasn't drunk, i was able to observe what was happening at sips quite carefully. i was percieving all the bodies around me and listening to how the music was structured and how it was affecting everyone. i was most fascinated by how it would up to a point and just keep going and it felt like it was trying to stretch the imaged-sound-wave-type-system to its tensile limits. 
+
+possible epiphany about the trade situation:
+	it seems strange for a govt to impose restrictions on how the companies of its nation can trade. but it makes sense for tensions to eventually arise, simply because of the fact that the place are geographically distant. that may seem like a naive answer, but the fact of the matter is that these countries and groups of consumers of products produced by companies are operating with the condition of them delegating the production/collection of their material requirements to other groups of humans. people become so troubled by the fact that their ideologies are not playing out in the external world as perfectly invisioned in their head. they quickly look past (forgoe consideration of) the fact that they only have the perspective which has resulted from perceiving what they have perceived throughout their lives. when fully understood, it is easy to see that disagreements are almost necessary for their to be any activity of multiple individual humans in its current state at all. nobody really wants to do the hard work of what it requires to sustain our lifestyles.  
+	
+	the material which lies here draping this metaphysical landscape, connecting these minds. a bridge, between common forms and patterns of electricity dancing upon these bodies of flesh and circuitry.  
+																				minds created just to dream it
+	linguistic constructs made from english which my brain generated cannot describe this epiphany
+	there are so many dimensions from which to consider any given phenomenah. the thing is though, a phenomenah itself must only initially emerge from some "lens" -- it only came to be known by one by a process through time of material being processed (information groked, vibrations percieved, material consumed).
+	
+	
+	it seems a universal law that the singularity must occur as a result of frequency and cause of semantic associations within an informational field, and not in some other realm of material form. 
+	for a formal isomorphism to be drawn between two separate periodic systems via the sustainence of signal through material of a shared external event-space is a phenomenon worth considering. 
+	
+	
+	reach through the past
+	feel that sound again
+	and remember 
+	why you remembered
+	why we hold on
+	believing their must be an end to this increasing void of ambiguous form
+	when clarity will come.
+	these progressions, supposedely reflections
+	of something, something yet to be known.
+	it lies beyond,
+	or underneath or above,
+	but it connects us to time,
+	
+	
+	fields of corn,
+	random ramble,
+	epiphanies like no other
+	
+	
+	as i sit here and write, i come to consider the possibility that i am being communicated with by microbial lifeforms dwelling or the corn chex in the box sitting next to me. 
+	
+	
+	
+	kek is real and now i feel like i've entered a cat's dream. 
+	
+	
+
+
+	the dream of the cats
+
+i wish i could say that this madness has run its course, that i could just sink into a steady peaceful sensible schedule. but something just keeps pushing me. idk. maybe i'm just a hedonistic selfish fuck. 
+
+right now i feel like apologizing for not going to kirtan. but i've reached a point where i can now realize that that's not the problem. the problem is my refusal to face myself -- to deal with my demons. 
+
+i've numbed myself tonight for some reason. i wanted to deal with my demons, do some shadow work, whatever, seriously, but i ended up snacking on some mildly shitty food too late at night. 
+
+
+
+-----
+
+don't look at it as an excuse for falling into self-destruction, use it an inspiration to guide others
+
+THIS IS SO absurd that i chill out in this apartment, a human, using horribly inneficient systems
+
+
+
+i'm a being who just wants to eat good food, that sensory desire
+
+
+--------------
+
+
+this constant struggle.
+this desire to find balance. 
+so that i can once again dwell peacefully without tensi8on or anxiety or fear 
+
+
+-----------
+
+evolved to this point...
+us humans.
+we have bodies up at this level, 
+we are able to get drunk and experience this enticing realm of thought.
+
+
+everyday, living in this body,
+typeing words on a keyboard to control some process of some software
+to do something within the relam of transportation for the government
+of the state of iowa
+
+---------------------
+
+new neural patterns to write... to this system which is my brain. this software has taken a wrong course; there are complex reactions wired in which trigger based on irrelevant things, and then they trigger other things. tonight i almost had a beer, but i decided not to, as i might hang out with kori tomorrow, and we'll probably drink. i almost hung out with her today but decided i didn't feel like going all the way over to her place. 
+
+we live in this world of magnificent inventions and tools so readily available for us and everything works so well. it's really fucking amazing. but are we losing the ability to continue this progress ourselves?
+
+truth is important. what is the truth? right now i'm chillin in my room watching a video about fo:nv factions and eating seseme sticks. i wasn't as productive as i wanted to  be today. i'm feeling less anxious about society and climate change lately. 
+
+-----------
+
+it's like all i see now are membranes separating systems of consciousness which are concerned with some arrangement of matter on some level in order to experience some sensual pleasure. 
+
+this semester i will have fun in the chaos, being able to see above it, and help people behave more rationally
+
+-----------------------------------
+
+
+what i enjoy so much about this experience i think is the fact that i can forget about everything else and just feel the sensory pleasures for a while
+
+---------------------
+
+sometimes i feel like such a piece of shit. tonight i didn't go to yoga, which isn't even a big deal because the reason was that i was chillin ian, then we separated earlier than anticipated, so i could have gone to yoga. but i decided to eat some cereal and beef jerkey and play video games. but that's ok for now; i know not to be too hard on myself. tonight i'm gonna forget about it all, like i did that one saturday (there's a whole universe inside of me and i don't even know my own depths), and just have fun with vidya games, and feel the enjoyment and relaxation go through my body and mind. 
+
+
+if i lived my ideal life, i would've stayed outside tonight and listened to the crickets and other sounds and felt the air. i went back inside to play video games because... well, idk, i wanted to. or at least i thought i wanted to. the chicken strips were pretty good, only because i had sauce, otherwise they would've been pretty dry. i would also meditate everyday before work. i've stopped meditating because i don't like to face the fact that i'm living opposed to my ideals. i've barely gone to reliable street at all this summer. i should be going there at least like twice a week. but instead i do other bullshit. it's not all bullshit, but a lot of it is.. i think. there may be some benefit to playing video games for me, idk. 
+
+-------------------
+
+i was feeling really in the zone tonight, and was thinking "what if i went all out? with my musical potential. like pulled some david bowie shit. it would be so awesome. and i know that that's what people need right now. for someone to get past this shizophrenic bullshit and let it be known that it's ok to drop into our primal loving modes of being and forget about these high level [frontal cortex] concepts which cause us so much distress"
+
+-----------------
+
+
+so there i am, in the hallway. there's a swat team and a bunch of cops outside with big guns ready to arrest me, and snipers pointed at me. I just got off the phone with president barack oboma. no matter what i say, it won't ease anyone's fear. i try to articulate a sentence, but it is interpereted as a huge threat by some portion of those listening. and before i can finish what i'm saying, they get all super anxious and react in some crazy way that only causes more trouble. 
+
+a sort of a life analysis, post graduation may 2019:
+
+what causes me anxiety now is the knowledge of the fact that we may be headed towards non-existence, and that we know things that we could do to make that not so, and that we are actually not doing those things. more concretely, we are extracting fossil fuels from the crust of the earth at a rate waaaay higher than the rate at which it naturally develops, and we are combusting this mass to use its energy to power our society (transportation of resources, waste, and people; maintenance of digital communication and info storage systems; entertainment) while letting the resulting greenhouse gases accumulate in the atmosphere, thus slowly changing the state of our climate towards inhabitability. i know that this won't affect me in my lifetime -- i can still live to a very high standard til the end of my life. but i know that there is more to existence than this single human life which i am currently living -- i've had too many experiences which tell me so. and even if that weren't so, i can't feel good about myself unless i act as if it were so. think about it: we have things so good today because the people before us put in so much work to make awesome things. 
+
+so, with all that, i am faced with the tast of figuring out what to do with my life from here on out. i am as free as i've been. i feel as if we are going to have to let go of our minds at some point, because all this drama -- these stories -- held inside is really nonsense. it is fun, but much of it is the cause of all our trouble. i have a desire to stay inside and snack on food and program and play video games. but when i go out and volunteer, that feels really good. 
+oftentimes i feel bad for not utilizing my full potential and working hard, both mentally and physically. 
+
+what it comes down to, i think, is should i drop all this advanced intellectual knowledge up in the mind and become more of a yogi/shaman connected-to-earth person who serves the community directly by cooking food and playing music; OR should i hold on to this complex semantic structure which allows the full utilization of computers, and get a high paying computer job. 
+
+
+
+my thoughts on the ideal usage of computers in the future: 
+	1. to facilitate the process of freeing up constrictions on resource flow, and distribute resources more evenly, and enable more fair trade.
+		this would be done by allowing people to report what resources are available where, and allow trades to be suggested.
+		an important thing to be figured out is how to have for example a timer company show how much timber they have, because they will be reluctant at first because they already have their distribution protocol established within the existing economic paradigm. 
+	2. to facilitate the process of establishing the most reasonable scale of human governence.
+		this is done by allowing people to freely and anonymously talk about what they want to talk about with those within a geographic region. this i think could be the best way to actually establish truth. people could figure out what they actually want. and then people could find out where boundaries lie in what the established consensus is. then people could behave accordingly, without having rules be imposed upon them from a centralized government. 
+		
+	another thing that hold on to which i feel has massive potential is that JBP/frog/vampire electronic music. 
+	
+	
+	
+lately i've felt this idea about being a descendant of fungus/mushrooms, and how we have them to thank for our capacity for language. that's something i'll have to research more. 
+
+i also feel like i could just sit and play drums and chant for several hours a day. 
+
+
+
+hackathon idea: a game that brings people together like no other. 
+location based, good graphics, engaging, moddable but not too much, 
+
+
+i have the perfect launching point to create such awesome things to benefit the community
+
+
+
+to figure out how best to implement frogpond, send out a survey:
+	- what is lacking with your experience of social media?
+	- what do you use the internet for the most?
+	- do you plan to move after you graduate?
+	- how is your living situation and rent?
+	-what do you study?
+	- what are your career goals?
+	- 
+	
+software to be implemented:
+	- frogpond: location-based anonymous forum; this is urgent, before some dumbass makes a shitty version like yik yak
+	- locations of plants 
+	- extra meal bundle distributer
+	- 
+	
+	
+	
+if i don't make frog pond, someone else will, and it will probably be shitty. 
+
+ideologies everywhere. so much complexity within this semantic potential space. 
+
+-----
+
+the time to act is now, we can't wait any longer, holding on to this chasing of a feeling from the past.
+as my dreams get stranger, and it seems i'm getting subtle hints from past lives,
+i feel the call to action. 
+
+
+our actions everyday are based off of a structure which has been ingrained in us from the time we were born and which can be articulated with our language. we're all buried within it; we don't even realize that we're repeatedly running over thoughts everyday. i read a book a while back called "entangled", which was about how the inventions, culture, language, etc. that develops over time is all entangled with each other. how a conception of reality can kind of dig itself into a hole that makes sense if you only look at each sequential step, but when you zoom out and look at all the facts gathered it is easy to see that a better conception exists. 
+with this, i want to examine the daily repeated patterns of humanity. think of all the cardboard coffee cups made and thrown away each day, and then all cups for other beverages. 
+
+
+i have lost my train of thought because of the vibrations from my dad stomping around upstairs. that brings up an immense anger within me and i had to run around downstairs and punch the air a bit. 
+
+
+
+at any type of social event, take an informal family gathering, for example, people always ask me about the usual things you're supposed to ask a young adult who's just graduating college. "Got any jobs lined up?" "How's the job search going?" "What are your plans for the summer?" And then I find myself in this awkward exchange, because i don't really care about presenting myself as some upstanding citizen who takes his career seriously. But maybe i'm talking to some sexually attractive female, and i would rather just kiss her or something right then and there. i know she's -- just as everyone else -- looking for true love. 
+
+i have an immense capability to organize language, and i'm way up here on this mountain of concepts and people demand that i care about so much, but the truth is i just don't. i was thrown into this world and encouraged to keep climbing this ladder of understanding and now i'm here with the same primal desires that mammals have always had, as well as some problems which are hard to pinpoint but have something to do with an inability to relax into the moment and connect with other people. there is a problem with suppression of energy. 
+
+
+need to figure out the reality i want to manifest, to combat chaos. it definitely is one where i don't strive so much to control it. 
+
+
+
+
+------
+
+frogs
+mushrooms
+bees
+trees
+birds?
+
+
+jung
+shamanic drumming
+
+
+what if all the galzies in the universe are particles within a cosmically-scaled fluid (plasma?) which is moving with the motion of a funnel. the tip of the funnel would have super high density and highest velocity. 
+one of the causes for the emergence of this kind of system would be that the constituents do not have the required momentum to leap onto orbit of an external system. 
+this case where there is anough gravitational energy introduced from an external body is the other conceivable possibility. 	
+
+
+what function is the computer programer community serving right now with regard to the progression of humanity? it seems our efforts could be massively improved if we established a framework by which to quickly establish consensus and then to implement action. 
+
+the role of the computer scientist: since we deal with operation of the machines which do information processing, we should observe the patterns in nature and think about where to go next. we should not be merely plugging ourselves into the operations of some coorporate enterprise while disregarding how that enterprise acts within and affects the physical world within which it is contained. we should be of a kind of philosopher, and experimenters. 
+we know how to interperet data; we can see that the present human social structures do not operate as harmoniously as they could, and we can see that software systems play a huge role in the operation of human support structures (social, economic, energetic, resource and labor management). 
+
+
+govt hires someone to manage transportation infrastructure, for example. what does this person do? they hire a team of other people to manage the sub-parts of 'transportation'. this model continues down the line until you get to the laboror. the further up the hierarchy, the more money you make. So there are a bunch of people who don't really do much to contribute to the continued innovation and manifestation of the infrastructure. These people make a lot of money though, just because they manage a lot of people, however indirectly. 
+
+nano computers in food additive. act as AI encouraging addictive use of certain products. maybe companies can pay to 'advertise' within an additive, meaning the AI would make consumers buy their product. 
+
+ex: ai causes people to become addicted to certain behaviors. it might leave some chemical structure off-balance in the neurology, causing the organism to feel the need to satisfy some state of lack.
+
+
+Feel like getting out of Ames because it feels like there's just not much going on there. But I have friends, I have many friends, they make art, they sometimes dance. I participate in group mantra meditation, I make music, I enjoy delicious food, I program, I play games. Why isn't it enough? What is it that I am striving for? Or, rather, is it a matter of me running away from thoughts which distress me?
+
+
+I gotta wonder what it is about this style of music, this electronic droning and humming, that is so appealing. Is it the feeling of a planet humbly existing and having no significant events occur? Hmmm. I need to get back into lmms. I sit here and think of the potential that lies in my interaction with that software.
+
+
+When the cows are in such immense pain, they could be perceiving a completely different reality with distorted flow of time, similar to a human dream.
+
+
