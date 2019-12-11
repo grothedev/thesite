@@ -47,15 +47,16 @@ class PodcastController extends Controller
 		$p->day = $request->day;
 
 		//uploading recording to API
-		/*$api_url = 'http://grothe.ddns.net:8090/api/files';
+		$api_url = 'http://grothe.ddns.net:8090/api/files';
 		$f = $request->file('f');
-
+        var_dump($f);
 		$post = [];
 
 		$path = realpath($f->path());
 		$filename = 'pod_' . $p->day . '_' . $p->people . '.' . $f->extension();
 		$post['f'] = curl_file_create($path, null, $filename);
 
+        $p->filename = $filename;
 
 
 		$ch = curl_init();
@@ -76,11 +77,11 @@ class PodcastController extends Controller
 				print($r->msg);
 			}
 		}
-	*/
+
 		//$p->filename = $res[0]->filename;
 
 
-      return $p->save() . 'Podcast added.<br>' . redirect('pod');
+      return $p->save() . 'Podcast added.<br>' . redirect('podcasts');
     }
 
     /**

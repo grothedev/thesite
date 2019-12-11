@@ -17,11 +17,10 @@ Route::get('/', function () {
 	return view('home');
 });
 
-/*
+
 Route::get('f', function () {
 	return view('dir');
 });
-*/
 
 Route::get('/n', function(){
 	return view('note');
