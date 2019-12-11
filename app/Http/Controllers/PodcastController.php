@@ -14,7 +14,7 @@ class PodcastController extends Controller
      */
     public function index()
     {
-        $pods = Podcast::all();
+        $pods = Podcast::all()->sortBy('day', SORT_DESC, true);
         return view('pod.index', compact('pods'));
     }
 
@@ -49,7 +49,6 @@ class PodcastController extends Controller
 		//uploading recording to API
 		$api_url = 'http://grothe.ddns.net:8090/api/files';
 		$f = $request->file('f');
-        var_dump($f);
 		$post = [];
 
 		$path = realpath($f->path());
