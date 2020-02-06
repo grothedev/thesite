@@ -29,9 +29,11 @@
 					@endforeach
 					<center> - -- --- ----- -------- ----- --- -- -</center>
 					<br>
+					<!--
 					<p>
-						If you would like to talk on the podcast, <a href = "form.php">fill out this form.</a> (under construction currently. send me an email for the time being)
-					</p>
+					 If you would like to talk on the podcast, <a href = "form.php">fill out this form.</a> (under construction currently. send me an email for the time being)
+					</p> 
+					-->
 
 			</div>
 		</div>

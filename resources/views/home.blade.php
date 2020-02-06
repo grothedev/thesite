@@ -6,6 +6,7 @@
 	</head>
 	<center>
 		<h2>A Friendly Webserver</h2>
+		<h6>in Virginia</h6>
 	</center>
 	<body></body>
 	<div class = "container">
@@ -34,16 +35,17 @@
 			<div class = "box">
 				<a name = "pod"></a>
 				<h4>Podcast</h4>
-				<p>I host podcasts every once in a while. <a href =  "podcasts">Check it out.</a></p>
-				<audio controls src = "http://gdev.ddns.net:8899/stream.mp3"></audio>
+				<p>I hosted a few podcasts when living in Ames. <a href =  "podcasts">Check it out.</a></p>
+				<!-- <audio controls src = "http://gdev.ddns.net:8899/stream.mp3"></audio> -->
 			</div>
 
+			<!--
 			<div class = "box">
 				<a name = "mc"></a>
 				<h4>Minecraft Server</h4>
 				<h6>grothe.ddns.net:25565</h6>
-				
 			</div>
+			-->
 
 			<!--
 			<div class = "box">
@@ -51,8 +53,8 @@
 			</div>
 			-->
 			<div class = "box">
-				<h5>What's with the "ddns.net" ?</h5>
-				<p>ddns.net is a free domain name provided by <a href = "https://noip.com">No-IP</a>. I find it more convenient than always having to type <a href = "http://173.24.176.217">173.24.176.217</a> into the address bar.</p>
+				<!-- <h5>What's with the "ddns.net" ?</h5>
+				<p>ddns.net is a free domain name provided by <a href = "https://noip.com">No-IP</a>. I find it more convenient than always having to type <a href = "http://173.24.176.217">173.24.176.217</a> into the address bar.</p> -->
 				<p><h5 style = "display: inline-block;">Questions, concerns, suggesitons?</h5> <a href = "mailto:grothe.tr@gmail.com">Email me</a>.</p>
 			</div>
 
