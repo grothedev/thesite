@@ -28,6 +28,12 @@ Route::get('/n', function(){
 
 Route::post('note', 'SiteController@appendThought');
 
+Route::get('tkv', function(){
+	return view('testkv');
+});
 
 
-Route::resource('podcasts', 'PodcastController');
+//Route::resource('podcasts', 'PodcastController');
+Route::get('kv', 'KVController@index');
+Route::get('kv/{k}', 'KVController@show');
+Route::post('kv', 'KVController@store');
