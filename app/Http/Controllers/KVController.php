@@ -17,7 +17,7 @@ class KVController extends Controller
     public function index()
     {
         $d=$this->dir;
-        $keys = scandir($this->d);
+        $keys = scandir($d);
         $m = [];
         foreach ($keys as $k){
             $f=$d.$k;
