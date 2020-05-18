@@ -62,7 +62,8 @@ class KVController extends Controller
     {
         $d=$this->dir;
         $fn = $d.$k;
-        $file = fopen($fn, 'r') or die('key not found');
+        $file = fopen($fn, 'r');
+        if (is_null($file)) return '';
         $v = fread($file, filesize($fn));
         return $v;
     }
