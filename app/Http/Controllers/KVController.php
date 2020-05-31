@@ -22,6 +22,7 @@ class KVController extends Controller
         foreach ($keys as $k){
             $f=$d.$k;
             if ($k == '.' || $k == '..') continue;
+            if (filesize($f)==0) continue;
             $v = fread( fopen($f, 'r'), filesize($f) );
             $m[$k]=$v;  
         }
@@ -62,9 +63,8 @@ class KVController extends Controller
     {
         $d=$this->dir;
         $fn = $d.$k;
-        if (file_exists($fn)){
+        if (file_exists($fn) && filesize($fn)>0){
             $file = fopen($fn, 'r');
-            if (is_null($file)) return '';
             $v = fread($file, filesize($fn));
             return $v;
         } else{
