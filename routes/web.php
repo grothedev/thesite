@@ -32,6 +32,19 @@ Route::get('tkv', function(){
 	return view('testkv');
 });
 
+Route::get('verum', function(){
+	return view('blog/0');
+});
+
+Route::get('4', function(){
+	return view('4chan_search');
+});
+//Route::get('4', 'SiteController@search4chan');
+
+//TODO use controller to query API from PHP
+Route::get('geomat', function(){
+	return view('map');
+});
 
 //Route::resource('podcasts', 'PodcastController');
 Route::get('kv', 'KVController@index');

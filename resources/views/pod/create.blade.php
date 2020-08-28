@@ -20,11 +20,7 @@
 						{{ csrf_field() }}
 
 						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-
 			                <label for="name" class="col-md-2 control-label">Participants</label>
-
-
-
 			                    <input type = "text" id="people" class="form-control" name="people" value="{{ old('people') }}" required autofocus></input>
 
 			                    @if ($errors->has('people'))

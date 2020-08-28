@@ -27,7 +27,7 @@ class SiteController extends Controller
 		$req = $client->createRequest('POST', 'grothe.ddns.net/api/files', ['multipart' => [$mpData]]);
 		$req->setPort(8090);
 		
-		$result = $client-send($req);
+		$result = $client->send($req);
 		
 		/*$result = $client->post('grothe.ddns.net:8090/api/files', [
 			'multipart' => [$mpData]
@@ -48,6 +48,29 @@ class SiteController extends Controller
 		$s = fwrite($f, $t);
 		fclose($f);
 		return $s;
+	}
+
+	public function search4chan(Request $req){
+		$bod = '';
+		if ($req->b) $bod = $req->b;
+		$res = shell_exec('python search4chan.py ' . $req->q . ' ' . $bod);
+		return view('4chan_search_res', compact($res));
+	}
+
+	/**
+	 * get the json list of map points from API to pass into view
+	 */
+	public function getMap(Request $req){
+		$wwp_api = ''; //TODO wwp rental property API URL
+		$client = new Client();/*([
+			'base_uri' => $wwp_api
+		]);
+		$req = $client->createRequest('GET', $wwp_api);
+		$req->setPort(8080);
+		$res = $client->send($req);
+			*/
+		$res = $client->request('GET', $wwp_api);	
+		return view('map', compact($res));
 	}
 }
 

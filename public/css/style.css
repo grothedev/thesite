@@ -8,3 +8,20 @@
 body{
 	background-color: #ececec;
 }
+
+#map{
+	border: 1px solid black;
+}
+
+#map-infowindow{
+	border: 2px solid green;
+}
+
+.content .layout{
+	font-size: 16px;
+
+}
+
+.content p{
+
+}
