@@ -46,7 +46,20 @@ Route::get('geomat', function(){
 	return view('map');
 });
 
-//Route::resource('podcasts', 'PodcastController');
+//music mirror
+Route::get('mu', 'SiteController@music');
+
+Route::resource('podcasts', 'PodcastController');
 Route::get('kv', 'KVController@index');
 Route::get('kv/{k}', 'KVController@show');
 Route::post('kv', 'KVController@store');
+
+Auth::routes();
+Route::get('logout', function(){
+	Auth::logout();
+	return 'you logged out';
+});
+
+Route::get('/home', function(){
+	return view('home');
+});

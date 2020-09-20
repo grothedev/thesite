@@ -12,3 +12,5 @@ yarn-error.log
 .env
 access.log
 /public/f
+/public/kvs
+*.log

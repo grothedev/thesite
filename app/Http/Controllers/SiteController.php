@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
+use App\User;
+use Illuminate\Support\Facades\Auth;
+
 class SiteController extends Controller
 {
 
@@ -71,6 +74,17 @@ class SiteController extends Controller
 			*/
 		$res = $client->request('GET', $wwp_api);	
 		return view('map', compact($res));
+	}
+
+	/**
+	 * display music folder if authenticated
+	 */
+	public function music(){
+		if (Auth::check()){//} && Auth::user()->name == 'music'){
+			return view('music');
+		} else {
+			return redirect('login');
+		}
 	}
 }
 

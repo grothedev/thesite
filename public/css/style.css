@@ -13,8 +13,17 @@ body{
 	border: 1px solid black;
 }
 
+tr{
+	font-size: 10px;
+}
+
 #map-infowindow{
-	border: 2px solid green;
+	border: 2px solid black;
+	background-color: white;
+}
+
+.infowindow{
+	width: 100%;
 }
 
 .content .layout{
