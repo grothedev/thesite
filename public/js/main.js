@@ -23,7 +23,7 @@ require(["esri/map",
             /**
              * --- GLOBAL VARIABLES ---
              */
-            const API_URL = "http://localhost:9999/properties";
+            const API_URL = "http://localhost:8989/properties";
             //-----------------------------
 
             //TODO ajax get map markers from API
