@@ -23,7 +23,7 @@ require(["esri/map",
             /**
              * --- GLOBAL VARIABLES ---
              */
-            const API_URL = "http://localhost:8989/properties";
+            const API_URL = "http://grothe.ddns.net:8989/properties";
             //-----------------------------
 
             //TODO ajax get map markers from API
@@ -48,7 +48,8 @@ require(["esri/map",
                fail: ()=>{
                   alert("failed");
                },
-               crossDomain: true
+               crossDomain: true,
+               //dataType: "jsonp",
             });
 
             /**
@@ -70,7 +71,6 @@ require(["esri/map",
 
             //array of Graphic objs to connect the geometries to symbol markers
             var pointGraphics = [];
-            
 
             var graphicsLayer = new GraphicsLayer({
                //infoTemplate: infoTemplate

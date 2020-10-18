@@ -14,3 +14,4 @@ access.log
 /public/f
 /public/kvs
 *.log
+package-lock.json
