@@ -7,7 +7,7 @@
 	<center>
 		<h2>To Justify the Absurd</h2>
 		<h2>Semantic Interface of Sentience</h2>
-		<h2>Defining what is</h2>
+		<h2>Cosmic Debris</h2>
 		<h6>Placeholder name for the blog. These are just ideas, I need to come up with a name.</h6>
 	</center>
 	<body></body>
