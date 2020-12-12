@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class KVController extends Controller
@@ -47,9 +48,18 @@ class KVController extends Controller
      */
     public function store(Request $req)
     { //FUTURE appending? 
+        //csrf_field();
         if (is_null($req->auth)) return 'no auth';
         if ($req->auth != env('ADMIN_PASS')) return 'incorrect auth';
         $fn = $this->dir.$req->k;
+        if (file_exists($fn)){
+            copy($fn, $fn.Carbon::now()); //keep old versions
+            $num_entries = substr_count( shell_exec('ls | grep ' . $fn), '\n' );
+            if ($num_entries > 5){ //TODO age off old entries
+                shell_exec('i=0; for f in `ls -lrt | grep'.$fn.'`; do  if [[ i < '.$num_entries.'-5 ]]; then rm $f; i=i+1; fi; done; ');
+            }
+        }
+
         return file_put_contents($fn, $req->v); 
     }
 
