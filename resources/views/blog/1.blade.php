@@ -37,9 +37,7 @@ The question remains: is it still possible to implement the necessary change bef
 				</p>
 				<p>---------------------</p>
 				<p>
-					Also, I noticed that when I am writing, random songs will pop into in my head. Here are some of the song snippets that appeared while writing this.<br>
-
-					quotes:
+					Also, I noticed that when I am writing, random songs will pop into in my head. Here are some of the parts of songs that appeared while writing this:<br>
 					<ul>
 						<li>“is it only a dream that there’ll be no more turning away?” - pink floyd</li>
 						<li>“Nowadays everybody wanna talk like they got somethin' to say</li>
