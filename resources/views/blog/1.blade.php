@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel = "stylesheet" href = "css/skeleton.css" />
-		<link rel = "stylesheet" href = "css/style.css" />
+		<link rel = "stylesheet" href = "{{ asset('css/skeleton.css') }}" />
+		<link rel = "stylesheet" href = "{{ asset('css/style.css') }}" />
 	</head>
 	<center>
 		<h2>Post #1: Coordination</h2>
