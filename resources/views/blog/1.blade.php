@@ -5,7 +5,7 @@
 		<link rel = "stylesheet" href = "{{ asset('css/style.css') }}" />
 	</head>
 	<center>
-		<h2>Post #1: Coordination</h2>
+		<h2>Post #1: Coordination and Communication</h2>
 		<h3>2021/2/27</h2>
 	</center>
 	<body></body>
@@ -40,9 +40,9 @@ The question remains: is it still possible to implement the necessary change bef
 					Also, I noticed that when I am writing, random songs will pop into in my head. Here are some of the parts of songs that appeared while writing this:<br>
 					<ul>
 						<li>“is it only a dream that there’ll be no more turning away?” - pink floyd</li>
-						<li>“Nowadays everybody wanna talk like they got somethin' to say</li>
-						<li>But nothin' comes out when they move their lips</li>
-						<li>Just a bunch of gibberish” - eminem</li>
+						<li>“Nowadays everybody wanna talk like they got somethin' to say
+						But nothin' comes out when they move their lips
+							Just a bunch of gibberish” - eminem</li>
 						<li>“we’re living in a land of make believe, and trying not to let it show” – moody blues</li>
 						<li>“all we have to do is keep talking” – stephen hawking (from pink floyd – keep talking)</li>
 						<li>“terror fills my soul” – gentle giant</li>
