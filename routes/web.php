@@ -33,8 +33,14 @@ Route::get('tkv', function(){
 });
 
 Route::get('verum', function(){
+	return view('blog/index');
+});
+Route::get('verum/0', function(){
 	return view('blog/0');
 });
+Route::get('verum/1', function(){
+	return view('blog/1');
+}); //TODO implement model
 
 Route::get('4', function(){
 	return view('4chan_search');
