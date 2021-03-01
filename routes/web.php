@@ -32,15 +32,14 @@ Route::get('tkv', function(){
 	return view('testkv');
 });
 
-Route::get('verum', function(){
-	return view('blog/index');
-});
-Route::get('verum/0', function(){
-	return view('blog/0');
-});
-Route::get('verum/1', function(){
-	return view('blog/1');
-}); //TODO implement model
+Route::get('verum', 'WritingController@index');
+Route::get('verum/create', 'WritingController@create');
+Route::get('verum/{id}', 'WritingController@show');
+Route::post('verum/store', 'WritingController@store');
+
+Route::post('verum/comments/store', 'CommentController@store');
+
+
 
 Route::get('4', function(){
 	return view('4chan_search');

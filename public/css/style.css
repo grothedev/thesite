@@ -17,6 +17,10 @@ tr{
 	font-size: 10px;
 }
 
+.comment{
+	margin-left: 1em;
+}
+
 #map-infowindow{
 	border: 2px solid black;
 	background-color: white;
