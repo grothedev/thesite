@@ -8,12 +8,14 @@
 
         <div class = "container">
 			<div class = "row">
-				<center>
-					<a href = {{ $w->id }}><h2>{{$w->title}}</h2></a>
-                    <div>{!! html_entity_decode($w->content) !!}</div>
-                    <br>
-                    - -- --- ----- --- -- -
-                </center>
+                <div class = "box" width = "70%">
+                    <center>
+                        <a href = {{ $w->id }}><h2>{{$w->title}}</h2></a>
+                        <div>{!! html_entity_decode($w->content) !!}</div>
+                        <br>
+                        - -- --- ----- --- -- -
+                    </center>
+                </div>
             </div>
             <div class = "row">
                 <center>
