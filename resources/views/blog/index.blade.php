@@ -16,7 +16,7 @@
                     <ul style = "list-style-type: none;">
                         <li>
                             <a href = "/verum/{{ $w->id }}"><h2>{{$w->created_at}} -- {{$w->title}}</h2></a>
-                            <p>{!! html_entity_decode($w->content), 0, 256) . '...' !!}</p>
+                            <p>{!! html_entity_decode(substr($w->content, 0, 256)) . '...' !!}</p>
                         </li>
                     </ul>
                 @endforeach
