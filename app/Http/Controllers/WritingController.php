@@ -44,11 +44,9 @@ class WritingController extends Controller
         
         $w = new Writing;
         $w->title = $request->input('title');
-        $w->content = $request->input('content');
-        echo $w->content;
-        /*
+        $w->content = htmlentities($request->input('content'));
         $w->save();
-        */
+        
     }
 
     /**

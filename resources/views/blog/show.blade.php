@@ -10,7 +10,7 @@
 			<div class = "row">
 				<center>
 					<a href = {{ $w->id }}><h2>{{$w->title}}</h2></a>
-                    <div>{{$w->content}}</div>
+                    <div>{!! html_entity_decode($w->content) !!}</div>
                     <br>
                     - -- --- ----- --- -- -
                 </center>
@@ -22,7 +22,7 @@
                         {{ @csrf_field() }}
                         <textarea rows="3" cols="70" name="comment_text"> </textarea><br>
                         Name/Email (optional): <input type = "text" name = "name" /><br>
-                        <input type = "text" id = "w_id" name = "w_id" value = "{{htmlspecialchars($w->id)}}" hidden />
+                        <input type = "text" id = "w_id" name = "w_id" value = "{{ $w->id }}" hidden />
                         <button type = "submit" id = "comment_post">Reply</button>
                     </form>
                     <br><br>
