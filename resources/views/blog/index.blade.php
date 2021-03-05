@@ -15,7 +15,8 @@
                 @foreach ($writings as $w)
                     <ul style = "list-style-type: none;">
                         <li>
-                            <a href = "/verum/{{ $w->id }}"><h2>{{$w->title}} -- {{$w->created_at}}</h2></a>
+                            <a href = "/verum/{{ $w->id }}"><h2>{{$w->title}}</h2></a>
+                            <h6>{{$w->created_at}}</h6>
                             <p>{!! html_entity_decode(substr($w->content, 0, 256)) . '...' !!}</p>
                         </li>
                     </ul>
