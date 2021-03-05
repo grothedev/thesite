@@ -33,6 +33,12 @@
 			</div>
 
 			<div class = "box">
+				<a name = "verum"></a>
+				<h4>Writings</h4>
+				<p>I write thoughts and ideas in the form of a blog essay type of thing.<a href =  "verum">Check it out.</a></p>
+			</div>
+
+			<div class = "box">
 				<a name = "pod"></a>
 				<h4>Podcast</h4>
 				<p>I hosted a few podcasts when living in Ames. <a href =  "podcasts">Check it out.</a></p>
