@@ -4,7 +4,7 @@
             <link rel = "stylesheet" href = "../../css/skeleton.css" />
             <link rel = "stylesheet" href = "../../css/style.css" />
     </head>
-
+<?php use Carbon\Carbon; ?>
     <div class = "container">
         <div class = "row">
             <center>
@@ -16,7 +16,7 @@
                     <ul style = "list-style-type: none;">
                         <li>
                             <a href = "/verum/{{ $w->id }}"><h2>{{$w->title}}</h2></a>
-                            <h6>{{$w->created_at}}</h6>
+                            <h6>{{ (new Carbon($w->created_at))->toFormattedDateString() }}</h6>
                             <p>{!! html_entity_decode(substr($w->content, 0, 256)) . '...' !!}</p>
                         </li>
                     </ul>
