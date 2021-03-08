@@ -5,6 +5,14 @@
 	background-color: #efefef;
 }
 
+.writing-listitem{
+	padding: 2rem 10rem 2rem 10rem;
+}
+
+.writing-content{
+	padding: 4rem 8rem 4rem 8rem; 
+}
+
 body{
 	background-color: #ececec;
 }

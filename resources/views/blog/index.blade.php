@@ -11,15 +11,15 @@
                 <h2>Writings</h2>
                 <h6>I write about my thoughts every now and then</h6>
                 <center> - -- --- ----- -------- ----- --- -- -</center>
-                
+            </center>
                 @foreach ($writings as $w)
-                    <ul style = "list-style-type: none;">
-                        <li>
-                            <a href = "/verum/{{ $w->id }}"><h2>{{$w->title}}</h2></a>
+                    <div class = "box writing-listitem">
+                        <center>
+                            <a href = "/verum/{{ $w->id }}"><h3>{{$w->title}}</h3></a>
                             <h6>{{ (new Carbon($w->created_at))->toFormattedDateString() }}</h6>
-                            <p>{!! html_entity_decode(substr($w->content, 0, 256)) . '...' !!}</p>
-                        </li>
-                    </ul>
+                        </center>
+                        <p>{!! html_entity_decode(substr($w->content, 0, 256)) . '...' !!}</p>
+                    </div>
                 @endforeach
                 <center> - -- --- ----- -------- ----- --- -- -</center>
                 <br>

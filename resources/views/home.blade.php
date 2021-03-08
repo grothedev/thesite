@@ -35,7 +35,7 @@
 			<div class = "box">
 				<a name = "verum"></a>
 				<h4>Writings</h4>
-				<p>I write thoughts and ideas in the form of a blog essay type of thing.<a href =  "verum">Check it out.</a></p>
+				<p>I write thoughts and ideas in the form of a blog essay type of thing. <a href =  "verum">Check it out.</a></p>
 			</div>
 
 			<div class = "box">
