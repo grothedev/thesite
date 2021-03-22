@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Podcast;
+use App\Models\Podcast;
 use Illuminate\Http\Request;
 
 class PodcastController extends Controller
@@ -36,9 +36,7 @@ class PodcastController extends Controller
      */
     public function store(Request $request)
     {
-      //f (Auth::guest()) return 'must be logged in as admin';
-
-		//TODO obviously better auth
+        //TODO obviously better auth
 		if ($request->password != env('ADMIN_PASS')) return 'no auth' . redirect('pod');
 
 		$p = new Podcast;
@@ -86,7 +84,7 @@ class PodcastController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Podcast  $podcast
+     * @param  \App\Models\Podcast  $podcast
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -98,7 +96,7 @@ class PodcastController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Podcast  $podcast
+     * @param  \App\Models\Podcast  $podcast
      * @return \Illuminate\Http\Response
      */
     public function edit(Podcast $podcast)
@@ -110,7 +108,7 @@ class PodcastController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Podcast  $podcast
+     * @param  \App\Models\Podcast  $podcast
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Podcast $podcast)
@@ -121,7 +119,7 @@ class PodcastController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Podcast  $podcast
+     * @param  \App\Models\Podcast  $podcast
      * @return \Illuminate\Http\Response
      */
     public function destroy(Podcast $podcast)

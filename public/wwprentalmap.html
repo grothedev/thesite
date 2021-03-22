@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <link rel = "stylesheet" href = "css/skeleton.css" />
+        <link rel = "stylesheet" href = "css/style.css" /> -->
+        <link rel="stylesheet" href="https://js.arcgis.com/3.30/esri/css/esri.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://js.arcgis.com/3.30/"></script>
+        <!-- <script type = "text/javascript" src = "js/main.js"></script> -->
+        <style>
+            #map{
+                border: 1px solid black;
+            }
+            .infowindow{
+                width: 100%;
+            }
+            .container {
+                position: relative;
+                width: 100%;
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 0 20px;
+                box-sizing: border-box; 
+            }
+        </style>
+        <script type = "text/javascript" >
+            require(["esri/map",
+                "esri/geometry/Extent",
+                "esri/SpatialReference",
+                "esri/geometry/Point",
+                "esri/geometry/Geometry",
+                "esri/graphic",
+                "esri/symbols/SimpleMarkerSymbol",
+                "esri/geometry/mathUtils",
+                "esri/Color",
+                "esri/geometry/Extent",
+                "esri/layers/FeatureLayer",
+                "esri/tasks/query",
+                "esri/symbols/PictureMarkerSymbol",
+                "esri/geometry/Polygon",
+                "esri/toolbars/draw",
+                "esri/layers/GraphicsLayer",
+                "esri/dijit/InfoWindow",
+                "esri/InfoTemplate",
+                "dojo/dom-construct",
+                "dojo/domReady!"], function(Map, Extent, SpatialReference, Point, Geometry, Graphic, SimpleMarkerSymbol, mathUtils, Color, Extent, FeatureLayer, Query, PictureMarkerSymbol, Polygon, Draw, GraphicsLayer, InfoWindow, InfoTemplate, domConstruct) {
+
+
+                    /**
+                     * --- GLOBAL VARIABLES ---
+                     */
+                    const API_URL = "http://96.231.237.53:8989/properties";
+                    //-----------------------------
+
+                    //TODO ajax get map markers from API
+
+                    var infoWindow = new InfoWindow();
+
+                    var map = new Map("map", {
+                        center: [-96.62, 42.07],
+                        zoom: 8,
+                        basemap: "topo",
+                        infoWindow: infoWindow
+                    });
+
+                    infoWindow.startup();
+
+                    //get points from API. testing with wwp rental properties for now
+                    $.get({
+                    url: API_URL,
+                    success: (res)=>{
+                        handleResponse(res);
+                    },
+                    fail: ()=>{
+                        alert("failed");
+                    },
+                    crossDomain: true,
+                    //dataType: "jsonp",
+                    });
+
+                    /**
+                     * upon user click map, show most significant nodes and activity near
+                     * if clicked symbol, show info about that node
+                     */
+                    map.on("click", (clickEvent)=>{
+                    var point = new Point(clickEvent.mapPoint);
+                    if (clickEvent.graphic){
+                        var graphic = clickEvent.graphic;
+                        //infoWindow.setContent(graphic.getInfoTemplate());
+                        infoWindow.show(point, null);
+                    } else {
+                        infoWindow.hide();
+                    }
+                    });
+
+                function handleResponse(res){
+
+                    //array of Graphic objs to connect the geometries to symbol markers
+                    var pointGraphics = [];
+
+                    console.log(res);
+
+                    var graphicsLayer = new GraphicsLayer({
+                    //infoTemplate: infoTemplate
+                    }); //map layer which contains all the points of interest
+                    console.log(res);
+
+                    res.forEach((i)=>{
+                    var p = new Point(i['lon'], i['lat'], new SpatialReference({wkid:4326}));
+                    // points.push(p);
+                    var attrs = i;
+                    //var g = new Graphic(p, new SimpleMarkerSymbol(), attrs, infoTemplate); //attributes from API
+                    var infoTemplate = new InfoTemplate({
+                        title: "Rental Property",
+                        content: genInfoTemplateContent(attrs) // use the first graphic (rental property in this case)
+                    });
+                    infoTemplate = new InfoTemplate("Rental Property", "${*}");
+                    var g = new Graphic(p, new SimpleMarkerSymbol(), attrs, infoTemplate); //"${*}"));
+                    graphicsLayer.add(g);
+                    console.log(p);
+                    });
+
+                    map.addLayer(graphicsLayer);
+                }
+
+                /**
+                 * given a list of attributes of a graphic, return a string representing the html table to appear in the info window
+                 */
+                function genInfoTemplateContent(attrs){
+                    var res = "<table id=\"map-infowindow\">";
+                    Object.keys(attrs).forEach((k)=>{
+                    res += "<tr><th>"+k + "</th><th>" + attrs[k] + "</th></tr>";
+                    });
+
+                    res += "</table>";
+                    return res;
+                }
+
+
+            });
+        </script>
+	</head>
+	<center>
+		<h2>Rental Property Mapping</h2>
+	</center>
+	<body></body>
+	<div class = "container">
+		<div class = "row" >
+            <div id = "map"></div>
+        </div>
+        <div class = "infowindow">
+        </div>
+        <div class = "row">
+            <p>some information here</p>
+        </div>
+    </div>
+</html>

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,10 +19,6 @@ Route::get('/', function () {
 	return view('home');
 });
 
-
-Route::get('f', function () {
-	return view('dir');
-});
 
 Route::get('/n', function(){
 	return view('note');
@@ -44,7 +42,6 @@ Route::post('verum/comments/store', 'CommentController@store');
 Route::get('4', function(){
 	return view('4chan_search');
 });
-//Route::get('4', 'SiteController@search4chan');
 
 //TODO use controller to query API from PHP
 Route::get('geomat', function(){
@@ -59,12 +56,8 @@ Route::get('kv', 'KVController@index');
 Route::get('kv/{k}', 'KVController@show');
 Route::post('kv', 'KVController@store');
 
-Auth::routes();
+//Auth::routes();
 Route::get('logout', function(){
 	Auth::logout();
 	return 'you logged out';
-});
-
-Route::get('/home', function(){
-	return view('home');
 });

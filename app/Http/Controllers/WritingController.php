@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Writing;
-use App\Comment;
+use App\Models\Writing;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class WritingController extends Controller
@@ -41,18 +41,17 @@ class WritingController extends Controller
             return 'no auth' . redirect('writings');
         }
 
-        
+
         $w = new Writing;
         $w->title = $request->input('title');
         $w->content = htmlentities($request->input('content'));
         $w->save();
-        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Writing  $writing
+     * @param  \App\Models\Writing  $writing
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -65,7 +64,7 @@ class WritingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Writing  $writing
+     * @param  \App\Models\Writing  $writing
      * @return \Illuminate\Http\Response
      */
     public function edit(Writing $writing)
@@ -77,7 +76,7 @@ class WritingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Writing  $writing
+     * @param  \App\Models\Writing  $writing
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Writing $writing)
@@ -88,7 +87,7 @@ class WritingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Writing  $writing
+     * @param  \App\Models\Writing  $writing
      * @return \Illuminate\Http\Response
      */
     public function destroy(Writing $writing)
