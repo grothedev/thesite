@@ -13,5 +13,8 @@ yarn-error.log
 access.log
 /public/f
 /public/kvs
+/public/t
+/public/t.bak
+/public/access.log
 *.log
 package-lock.json
