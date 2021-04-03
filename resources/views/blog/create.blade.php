@@ -9,7 +9,11 @@
 </div><div class="form-group{{ $errors->has("content") ? " has-error" : ""}}">
 <label for = "content" class = "col-me-2 control-label">content</label>
 <input type = "text" id = "content" class = "form-control" name = "content" value="{{ old( "content")}}" autofocus></input>
-</div><div class="form-group">
+</div>
+<label for = "day" class = "col-me-2 control-label">day</label>
+<input type = "date" id = "day" class = "form-control" name = "day" value="{{ old( "day")}}" autofocus></input>
+</div>
+<div class="form-group">
 <div class="col-md-8 col-md-offset-2">
 password: <input type = "password" name = "password" />
 <button type="submit">Submit</button>
