@@ -38,7 +38,7 @@ Route::post('verum/store', 'WritingController@store');
 Route::post('verum/comments/store', 'CommentController@store');
 
 Route::get('mc-vh-restart', 'SiteController@restartMCServer');
-
+Route::get('mc-vh-cancelrestart', 'SiteController@cancelRestartMCServer');
 Route::get('4', function(){
 	return view('4chan_search');
 });
