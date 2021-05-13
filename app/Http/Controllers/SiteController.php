@@ -97,7 +97,7 @@ class SiteController extends Controller
 		}
 	}
 
-	public function cancelRestartMCServer(){
+	public function cancelRestartMCServer(Request $req){
 		exec('/srv/mc/vh/cancelShutdownMCServer_VH.sh');
 	}
 }
