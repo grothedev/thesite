@@ -87,12 +87,17 @@ class SiteController extends Controller
 	public function restartMCServer(Request $req){
 		if ($req->restart){
 			if ($req->password == env('MC_ADMIN_PASS')){
-				exec('mcrcon -H localhost -P 25576 -p ' . env('MC_RCON_PASS') . ' "say test"');
+				exec('/srv/mc/vh/shutdown.sh');
+				return view('mc_admin');
 			} else {
 				return 'NOT AUTHENTICATED';
 			}
 		} else {
 			return view('mc_admin');
 		}
+	}
+
+	public function cancelRestartMCServer(){
+		exec('/srv/mc/vh/cancelShutdown.sh');
 	}
 }

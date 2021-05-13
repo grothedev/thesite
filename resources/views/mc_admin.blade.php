@@ -17,6 +17,11 @@
                     <button type = "submit">Restart Server</button><br>
                     <input type = "hidden" name = "restart" value = "1" />
                 {{ Form::close() }}
+                <br>
+                {{ Form::open( array('action' => 'SiteController@cancelRestartMCServer', 'method' => 'get') ) }}
+                    <button type = "submit">Cancel Server Shutdown</button><br>
+                {{ Form::close() }}
+                
             </div>
         </div>
     </div>
