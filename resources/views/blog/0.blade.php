@@ -14,7 +14,7 @@
 	<div class = "container">
 		<div class = "row">
 			<div class = "box" width = "70%">
-			<center><a href = "http://108.28.164.96/f/IMG_20191210_163302(1).jpg"><img src = "http://108.28.164.96/f/IMG_20191210_163302(1).jpg" width="30%" /></a><br>
+			<center><a href = "http://70.21.5.9:8090/f/IMG_20191210_163302(1).jpg"><img src = "http://70.21.5.9:8090/f/IMG_20191210_163302(1).jpg" width="30%" /></a><br>
                             <small>Lake Ada Hayen, Ames, IA, December 09, 2019, when the moon was rising while the sun was setting roughly to 180degrees from each other.</small></center>
                         <br>
                 <p>Hello world. Welcome to the as-of-yet untitled repository of my thoughts and ramblings. Here you will find mostly observations, attempts to articulate what i believe to be true, my convictions and intentions, or random artistic works. </p>
@@ -33,8 +33,8 @@
 					</ul>
 				</p>
                                 <p>Here are some piano parts I recorded the past half-year. I have a bad habit of having a good idea for a song then recording some of it then forgetting to touch it again. Feel free to download these tracks, play along, or contact me for further collaboration.
-                                    <audio controls src="http://108.28.164.96/f/sample5.9.ogg"></audio><br><br>
-                                    <audio controls src="http://108.28.164.96/f/panic-piano.ogg">< /audio>
+                                    <audio controls src="http://70.21.5.9:8090/f/sample5.9.ogg"></audio><br><br>
+                                    <audio controls src="http://70.21.5.9:8090/f/panic-piano.ogg">< /audio>
                                 </p>
 				<p>So with that all out of the way, my next post which I’ve already written most of will be about the  existential threat that we’ve been living with for the past few decades that most people are unable to take seriously. How did it get this way? Will technology save us? How can we actually begin to implement the decentralized and harmonious-in-all-domains method of governance which the intelligent-among-us have dreamed of? </p>
 				<center>

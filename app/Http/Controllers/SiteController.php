@@ -83,4 +83,16 @@ class SiteController extends Controller
 			return redirect('login');
 		}
 	}
+
+	public function restartMCServer(Request $req){
+		if ($req->restart){
+			if ($req->password == env('MC_ADMIN_PASS')){
+				exec('mcrcon -H localhost -P 25576 -p ' . env('MC_RCON_PASS') . ' say test');
+			} else {
+				return 'NOT AUTHENTICATED';
+			}
+		} else {
+			return view('mc_admin');
+		}
+	}
 }
