@@ -56,7 +56,7 @@ Route::get('kv', 'KVController@index');
 Route::get('kv/{k}', 'KVController@show');
 Route::post('kv', 'KVController@store');
 
-//Auth::routes();
+Auth::routes();
 Route::get('logout', function(){
 	Auth::logout();
 	return 'you logged out';
