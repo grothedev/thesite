@@ -37,7 +37,11 @@
                 @foreach ($images as $img)
                         <div class = "img-li">
                         <a href = "http://grothe.ddns.net:8090/f/{{ $img->filename }}">
-                            <img class="img-li" src = "http://grothe.ddns.net:8090/f/{{ $img->filename }}"></img><br>
+                            @if (strstr(strtolower($img->filename), '.jpg') || strstr(strtolower($img->filename), '.png') || strstr(strtolower($img->filename), '.jpeg'))
+				<img class="img-li" src = "http://grothe.ddns.net:8090/f/{{ $img->filename }}"></img><br>
+			    @else
+				<p>{{ $img->filename }}</p>
+			    @endif
                         </a>
 </div>
                 @endforeach
