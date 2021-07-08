@@ -39,6 +39,26 @@ class SiteController extends Controller
 
 	}
 
+	//modifies img dump files with 'tag' to be presented in the gallery
+	public function uploadImgDump(Request $request){
+		$f = $request->file('f');
+		$client = new Client([
+			'base_uri' => 'http://grothe.ddns.net:8090'
+		]);
+		$mpData = [];
+		for ($i = 0; $i < sizeof($f); $i++){
+			array_push($mpData, [
+				'name' => 'pittsb-phili-fairfax-dc-goontrip-2021_' . $request->f[$i]->getClientOriginalName(),
+				'contents' => fopen($request->f[$i]->path(), 'r')
+			]);
+		}
+		$req = $client->createRequest('POST', 'grothe.ddns.net/api/files', ['multipart' => [$mpData]]);
+		$req->setPort(8090);
+
+		$result = $client->send($req);
+		return $result;
+	}
+
 	//add to queue to be pulled into my "working memory" document on laptop
 	public function appendThought(Request $request){
 		$t = $request->t;
@@ -78,7 +98,7 @@ class SiteController extends Controller
 	 * display music folder if authenticated
 	 */
 	public function music(){
-		if (Auth::check()){//} && Auth::user()->name == 'music'){
+		if (Auth::check() && Auth::user()->name == "admin"){//} && Auth::user()->name == 'music'){
 			return view('music');
 		} else {
 			return redirect('login');

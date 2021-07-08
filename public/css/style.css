@@ -46,3 +46,15 @@ tr{
 .content p{
 
 }
+
+.img-li{
+    width: 40%;
+    padding: 12px;
+    display: inline-block;
+}
+
+.img-li img{
+    width: 50%;
+    height: auto;
+	display: inline-block;
+}

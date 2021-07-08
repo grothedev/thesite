@@ -56,6 +56,11 @@ Route::get('kv', 'KVController@index');
 Route::get('kv/{k}', 'KVController@show');
 Route::post('kv', 'KVController@store');
 
+Route::get('sheeshbb', function(){
+	return view('imgdump');
+});
+Route::post('sheeshbb', 'SiteController@uploadImgDump');
+
 Auth::routes();
 Route::get('logout', function(){
 	Auth::logout();
