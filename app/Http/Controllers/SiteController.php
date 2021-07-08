@@ -50,10 +50,12 @@ class SiteController extends Controller
 			array_push($mpData, [
 				'name' => 'pittsb-phili-fairfax-dc-goontrip-2021_' . $request->f[$i]->getClientOriginalName(),
 				'contents' => fopen($request->f[$i]->path(), 'r')
+				//? need header here?
 			]);
 		}
 		$req = $client->createRequest('POST', 'grothe.ddns.net/api/files', ['multipart' => [$mpData]]);
 		$req->setPort(8090);
+		//? try with $client->request() instead of createRequest()
 
 		$result = $client->send($req);
 		return $result;
