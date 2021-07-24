@@ -84,7 +84,7 @@ class SiteController extends Controller
 		$tag = $request->tag;
 		$text = $request->text;
 		$text = $text . PHP_EOL;
-		$f = fopen($tag, "a") or die("cant open file");
+		$f = fopen('t/' . $tag, "a") or die("cant open file");
 		$s = 0;
 		$s = fwrite($f, $text);
 		fclose($f);
