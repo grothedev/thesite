@@ -40,8 +40,9 @@ Route::post('verum/comments/store', 'CommentController@store');
 Route::get('mc-vh-restart', 'SiteController@restartMCServer');
 Route::get('mc-vh-cancelrestart', 'SiteController@cancelRestartMCServer');
 Route::get('4', function(){
-	return view('4chan_search');
+	return view('4chan_search_query');
 });
+Route::post('4', 'SiteController@search4chan');
 
 //TODO use controller to query API from PHP
 Route::get('geomat', function(){
