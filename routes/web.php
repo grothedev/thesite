@@ -20,11 +20,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/n', function(){
-	return view('note');
-});
-
-Route::post('note', 'SiteController@appendThought');
+Route::get('/n/{t}', 'SiteController@writeThought');
+Route::post('/n', 'SiteController@appendThought');
 
 Route::get('tkv', function(){
 	return view('testkv');
