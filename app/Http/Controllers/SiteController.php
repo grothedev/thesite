@@ -7,6 +7,7 @@ use Auth;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Requests;
 
 class SiteController extends Controller
 {
@@ -41,31 +42,51 @@ class SiteController extends Controller
 
 	//modifies img dump files with 'tag' to be presented in the gallery
 	public function uploadImgDump(Request $request){
-		$f = $request->file('f');
+		$files = $request->file('f');
+		$api_url =   'http://127.0.0.1:8090/api/files'; //'http://grothe.ddns.net:8090/api/files';
+		// fileVar->getClientOriginalName() returns client filename
+		
+		//guzzler attempt
 		$client = new Client([
 			'base_uri' => 'http://grothe.ddns.net:8090'
 		]);
 		$mpData = [];
-		for ($i = 0; $i < sizeof($f); $i++){
+		foreach ($files as $f){
+			//var_dump($f);
+			$filename = $f->getClientOriginalName();
+			//print('<br>');
 			array_push($mpData, [
-				'name' => 'pittsb-phili-fairfax-dc-goontrip-2021_' . $request->f[$i]->getClientOriginalName(),
-				'contents' => fopen($request->f[$i]->path(), 'r')
+				'name' => $filename,
+				'contents' => fopen($f->path(), 'r')
+				//? need header here?
 			]);
 		}
-		$req = $client->createRequest('POST', 'grothe.ddns.net/api/files', ['multipart' => [$mpData]]);
-		$req->setPort(8090);
+		//$req = $client->createRequest('POST', 'grothe.ddns.net/api/files', ['multipart' => [$mpData]]);
+		//$req->setPort(8090);
+		//? try with $client->request() instead of createRequest()
+		//$result = $client->request('POST', 'http://grothe.ddns.net:8090/api/files', ['multipart' => $mpData]);
+		//$result = $client->send($req);
+		//return $result;
+		//end guzzler stuff
 
-		$result = $client->send($req);
-		return $result;
+		//rmccue requests attempt
+		$resp = Requests::post($api_url, [], $mpData);
+		return json_encode ( $resp );
+	}
+
+	//display the page to append some text to a "thought label" (e.g. todo, journal, poetry)
+	public function writeThought($t){
+		return view('note', compact('t'));
 	}
 
 	//add to queue to be pulled into my "working memory" document on laptop
 	public function appendThought(Request $request){
-		$t = $request->t;
-		$t = $t . PHP_EOL;
-		$f = fopen("t", "a") or die("cant open file");
+		$tag = $request->tag;
+		$text = $request->text;
+		$text = $text . PHP_EOL;
+		$f = fopen('t/' . $tag, "a") or die("cant open file");
 		$s = 0;
-		$s = fwrite($f, $t);
+		$s = fwrite($f, $text);
 		fclose($f);
 		return $s;
 	}
