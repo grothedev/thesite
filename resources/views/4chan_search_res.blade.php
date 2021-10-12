@@ -10,10 +10,10 @@
 	</center>
 	<body></body>
 	<div class = "container">
+		@foreach($res as $url)
 		<div class = "row">
-			<div class = "box" width = "70%">
-                test
-            </div>
-        </div>
-    </div>
+			<a href = "{{ $url }}">{{ $url }}</a>
+		</div>
+		@endforeach
+    	</div>
 </html>

@@ -12,7 +12,8 @@
 	<div class = "container">
 		<div class = "row">
 			<div class = "box" width = "70%">
-                <form action = "/4" method="POST">
+		<form action = "/4" method="POST">
+		    {{ csrf_field() }}
                     Keyword
                     <input type = "text" name = "q" /><br>
                     Board (Optional)
