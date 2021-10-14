@@ -9,6 +9,9 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Requests;
 
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+
 class SiteController extends Controller
 {
     public function uploadFiles(Request $request){
@@ -97,6 +100,23 @@ class SiteController extends Controller
 		$shellcmd = escapeshellcmd('./search4chan.sh ' . $req->q . ' ' . $bod);
 		exec($shellcmd, $res, $ret);
 		return view('4chan_search_res', compact('res'));
+	}
+
+	public function captureCameraImage(Request $req){
+		#$p = new Process(['ffmpeg', '-f', 'v4l2', '-i', '/dev/video0', '-loglevel', 'quiet', '-vframes', '1', '-y', 'camcapture.png']);
+		$p = new Process(['snapshot', '-loglevel', 'quiet', '-y', 'camcapture.png']);
+		$p->run();
+
+		if (!$p->isSuccessful()){
+			throw new ProcessFailedException($p);
+		}
+		
+		#exec('ffmpeg', $output, $ret);	
+		#echo exec('ffmpeg -f v4l2 -i /dev/video0 -vframes 1 -y camcapture.png', $output, $ret);
+		#var_dump($output);
+		#var_dump($ret);
+		#echo shell_exec('/usr/local/bin/snapshot -y camcapture.png');
+		return view('cam');
 	}
 
 	/**

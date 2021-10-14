@@ -41,6 +41,11 @@ Route::get('4', function(){
 });
 Route::post('4', 'SiteController@search4chan');
 
+Route::get('cam', function(){
+	return view('cam');
+});
+Route::get('snapshot', 'SiteController@captureCameraImage');
+
 //TODO use controller to query API from PHP
 Route::get('geomat', function(){
 	return view('map');
