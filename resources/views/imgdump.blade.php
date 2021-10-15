@@ -13,9 +13,7 @@
 			<div class = "box" width = "90%">
                 <h6>Upload some pictures</h6>
                 {{ csrf_field() }}
-                <!--{!! Form::open( ['action' => 'SiteController@uploadImgDump', 'files' => true] ) !!}-->
-               <!-- {!! Form::open( ['method' => 'POST', 'url' => '/sheeshbb', 'files' => true] ) !!}-->
-                {!! Form::open( ['method' => 'POST', 'url' => 'http://grothe.ddns.net:8090/api/files', 'files' => true] ) !!}
+                {!! Form::open( ['method' => 'POST', 'url' => env('FILES_API_URL'), 'files' => true] ) !!}
                     {!! Form::file('f[]', ['multiple']) !!}
                     <br>
                     <input type = "text" name = "tag" value = "sheeshbb" hidden />

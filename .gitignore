@@ -18,4 +18,4 @@ access.log
 /public/access.log
 *.log
 package-lock.json
-composer.lock
+phpunit.xml

@@ -18,10 +18,8 @@
 
 				</script>
 				<div id = "file-form">
-					<!--{!! Form::open(['url' => 'http://grothe.ddns.net:8000/api/files', 'files' => true]) !!} -->
 					{{ csrf_field() }}
-					<!--{!! Form::open(  ['action' => 'SiteController@uploadFiles', 'files' => 'true'] ) !!} -->
-					{!! Form::open( ['url' => 'http://grothe.ddns.net:8090/api/files', 'files' => true] ) !!}
+					{!! Form::open( ['url' => env('FILES_API_URL'), 'files' => true] ) !!}
     						<h4>File Storage</h4>
 						<h6>simply upload a file/s (of total size <= 512MB) and be given a link to access it from anywhere (temporary result page is the API json because something broke)</h6>
     					<h6><a href = "f">Uploaded Files</a></h6>
