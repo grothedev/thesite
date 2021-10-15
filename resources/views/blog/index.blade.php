@@ -16,7 +16,7 @@
                     <div class = "box writing-listitem">
                         <center>
                             <a href = "/verum/{{ $w->id }}"><h3>{{$w->title}}</h3></a>
-                            <h6>{{ (new Carbon($w->day))->toFormattedDateString() }}</h6>
+                            <h6>{{(new Carbon($w->created_at))->toFormattedDateString() }}</h6>
                         </center>
                         <p>{!! html_entity_decode(substr($w->content, 0, 256)) . '...' !!}</p>
                     </div>
