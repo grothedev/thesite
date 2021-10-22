@@ -97,8 +97,9 @@ class SiteController extends Controller
 	public function search4chan(Request $req){
 		$bod = '';
 		if ($req->b) $bod = $req->b;
-		$shellcmd = escapeshellcmd('./search4chan.sh ' . $req->q . ' ' . $bod);
+		$shellcmd = escapeshellcmd('./search4chan.py ' . $req->q . ' ' . $bod);
 		exec($shellcmd, $res, $ret);
+		
 		return view('4chan_search_res', compact('res'));
 	}
 
