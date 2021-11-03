@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 class KVController extends Controller
 {
 
-    public $dir='./kvs/';
+    public $dir='./kvs/'; //the directory where all the files (keys) storing the values are located
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * 
+     * 
+     * @return String a json associative array (map) of all the key-value pairs
      */
     public function index()
     {
@@ -29,11 +29,10 @@ class KVController extends Controller
         return $m;
     }
 
-    /**
-     * Display the specified resource.
+    /** 
      *
      * @param  String k
-     * @return \Illuminate\Http\Response
+     * @return String the text representation of data stored in file (k), or an empty string if that key doesn't exist
      */
     public function show($k)
     {
@@ -49,10 +48,25 @@ class KVController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 
+     * @param String $k key
+     * @return String the last modified time of the file representing key k 
+     */
+    public function getTimestamp($k){
+        $d=$this->dir;
+        $fn = $d.$k;
+        if (file_exists($fn) && filesize($fn) > 0){
+            return filemtime($fn);
+        }
+        return -1;
+    }
+
+    /**
+     * Stores a new key & value as a file (k) with contents (v) in the directory configured in this class.
+     * requires admin password (auth)
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request  $req  a POST request with the values: k, v, auth
+     * @return int number of bytes written
      */
     public function store(Request $req)
     { //FUTURE appending?

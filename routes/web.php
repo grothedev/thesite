@@ -58,6 +58,7 @@ Route::resource('podcasts', 'PodcastController');
 Route::get('kv', 'KVController@index');
 Route::get('kv/{k}', 'KVController@show');
 Route::post('kv', 'KVController@store');
+Route::get('kvt/{k}', 'KVController@getTimestamp');
 
 Route::get('sheeshbb', function(){
 	return view('imgdump');
