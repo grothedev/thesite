@@ -14,17 +14,31 @@ class KVController extends Controller
      * 
      * @return String a json associative array (map) of all the key-value pairs
      */
-    public function index()
+    public function index(Request $req)
     {
         $d=$this->dir;
+        $m = []; //map to return
+        
         $keys = scandir($d);
-        $m = [];
+        if ($req->k){ //use custom requested keys
+            $keys = explode(',', $req->k);
+        }
+        
+        $ts = false; //retrieve timestamp?
+        if ($req->t && $req->t != '0'){
+            $ts = true;
+        } 
+        
         foreach ($keys as $k){
             $f=$d.$k;
             if ($k == '.' || $k == '..') continue;
             if (filesize($f)==0) continue;
             $v = fread( fopen($f, 'r'), filesize($f) );
-            $m[$k]=$v;
+            if ($ts){
+                $m[$k] = ['v' => $v, 't' => filemtime($f)];
+            } else {
+                $m[$k]=$v; 
+            } //? should the structure of the returned map remain the same whether including timestamp or not? reason not to is i like the simplicity of response[key] = value, instead of response[key][v] = value.
         }
         return $m;
     }
@@ -34,14 +48,21 @@ class KVController extends Controller
      * @param  String k
      * @return String the text representation of data stored in file (k), or an empty string if that key doesn't exist
      */
-    public function show($k)
+    public function show($k, Request $req)
     {
         $d=$this->dir;
         $fn = $d.$k;
         if (file_exists($fn) && filesize($fn)>0){
             $file = fopen($fn, 'r');
             $v = fread($file, filesize($fn));
-            return $v;
+            if ($req->t && $req->t != "0"){ //return with timestamp
+                $res = array();
+                $res['v'] = $v;
+                $res['ts'] = filemtime($fn);
+                return $res;
+            } else {
+                return $v;
+            }
         } else{
             return '';
         }
