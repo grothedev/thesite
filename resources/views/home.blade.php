@@ -18,9 +18,9 @@
 
 				</script>
 				<div id = "file-form">
-					{{ csrf_field() }}
-					{!! Form::open( ['url' => env('FILES_API_URL'), 'files' => true] ) !!}
-    						<h4>File Storage</h4>
+					{!! Form::open( ['url' => 'http://grothe.ddns.net:8090/api/files', 'files' => true] ) !!}
+						
+						<h4>File Storage</h4>
 						<h6>simply upload a file/s (of total size <= 512MB) and be given a link to access it from anywhere (temporary result page is the API json because something broke)</h6>
     					<h6><a href = "f">Uploaded Files</a></h6>
 						{!! Form::file('f[]', ['multiple']) !!}
@@ -29,13 +29,13 @@
   					{!! Form::close() !!}
 				</div>
 			</div>
-
+			<!--
 			<div class = "box">
 				<a name = "verum"></a>
 				<h4>Writings</h4>
 				<p>I write thoughts and ideas in the form of a blog essay type of thing. <a href =  "verum">Check it out.</a></p>
 			</div>
-
+			-->
 			<div class = "box">
 				<a name = "pod"></a>
 				<h4>Podcast</h4>
