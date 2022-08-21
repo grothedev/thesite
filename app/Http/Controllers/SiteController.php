@@ -18,7 +18,7 @@ class SiteController extends Controller
 		$f = $request->file('f');
 
 		$client = new Client([
-			'base_uri' => 'http://grothe.ddns.net'
+			'base_uri' => env('FILES_API_URL') //'http://grothe.ddns.net'
 		]); //GuzzleHttp\Client
 
 		$mpData = [];
@@ -28,7 +28,7 @@ class SiteController extends Controller
 				'contents' => fopen($request->f[$i]->path(), 'r')
 			]);
 		}
-		$req = $client->createRequest('POST', 'grothe.ddns.net/api/files', ['multipart' => [$mpData]]);
+		$req = $client->createRequest('POST', env('FILES_API_URL'), ['multipart' => [$mpData]]);
 		$req->setPort(8090);
 
 		$result = $client->send($req);
