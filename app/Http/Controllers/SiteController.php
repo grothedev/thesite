@@ -84,6 +84,7 @@ class SiteController extends Controller
 
 	//add to queue to be pulled into my "working memory" document on laptop
 	public function appendThought(Request $request){
+		csrf_field();
 		$tag = $request->tag;
 		$text = $request->text;
 		$text = $text . PHP_EOL;
@@ -92,6 +93,10 @@ class SiteController extends Controller
 		$s = fwrite($f, $text);
 		fclose($f);
 		return $s;
+	}
+
+	public function vidview($v){
+		return view('vidview', compact('v'));
 	}
 
 	public function search4chan(Request $req){

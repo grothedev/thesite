@@ -27,6 +27,8 @@ Route::get('tkv', function(){
 	return view('testkv');
 });
 
+Route::get('v/{v}', 'SiteController@vidview');
+
 Route::get('verum', 'WritingController@index');
 Route::get('verum/create', 'WritingController@create');
 Route::get('verum/{id}', 'WritingController@show');
@@ -34,8 +36,8 @@ Route::post('verum/store', 'WritingController@store');
 
 Route::post('verum/comments/store', 'CommentController@store');
 
-Route::get('mc-vh-restart', 'SiteController@restartMCServer');
-Route::get('mc-vh-cancelrestart', 'SiteController@cancelRestartMCServer');
+Route::get('mc-restart', 'SiteController@restartMCServer');
+Route::get('mc-cancelrestart', 'SiteController@cancelRestartMCServer');
 Route::get('4', function(){
 	return view('4chan_search_query');
 });
