@@ -18,15 +18,15 @@
 
 				</script>
 				<div id = "file-form">
-					{!! Form::open( ['url' => 'http://grothe.ddns.net:8090/api/files', 'files' => true] ) !!}
+					<form action = "http://grothe.ddns.net:8090/api/files" method = "POST" enctype="multipart/form-data">
 						
 						<h4>File Storage</h4>
 						<h6>simply upload a file/s (of total size <= 512MB) and be given a link to access it from anywhere (temporary result page is the API json because something broke)</h6>
     					<h6><a href = "f">Uploaded Files</a></h6>
-						{!! Form::file('f[]', ['multiple']) !!}
+						<input multiple name="f[]" type="file">
 						<br>
     					<button type = "submit">Submit</button>
-  					{!! Form::close() !!}
+  					</form>
 				</div>
 			</div>
 			<!--
@@ -62,6 +62,19 @@
 				<p><h5 style = "display: inline-block;">Questions, concerns, suggesitons?</h5> <a href = "mailto:grothe.tr@gmail.com">Email me</a>.</p>
 			</div>
 
+			<center>
+			@auth
+				<form method="POST" action="{{ route('logout') }}">
+						@csrf
+					<a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">Log Out</a>
+				</form>
+			@else
+				<a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login  </a>
+				@if (Route::has('register'))
+					<a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">  Register</a>
+				@endif
+			@endauth
+			</center>
 		</div>
 	</div>
 

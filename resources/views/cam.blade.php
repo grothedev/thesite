@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	@admin
 	<head>
 		<link rel = "stylesheet" href = "css/skeleton.css" />
 		<link rel = "stylesheet" href = "css/style.css" />
@@ -15,4 +16,5 @@
 			<button type = "submit">Capture Snapshot</button>
 		</form>	
 	</div>
+	@endadmin
 </html>

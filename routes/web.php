@@ -67,8 +67,12 @@ Route::get('sheeshbb', function(){
 });
 Route::post('sheeshbb', 'SiteController@uploadImgDump');
 
-Auth::routes();
-Route::get('logout', function(){
-	Auth::logout();
-	return 'you logged out';
+Route::get('vt', function(){
+
 });
+
+Route::get('/u', function () {
+    return view('u');
+})->middleware(['auth', 'verified']);
+
+require __DIR__.'/auth.php';
