@@ -3,6 +3,9 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    Order allow,deny
+    Allow from all
+
     RewriteEngine On
 
     # Handle Authorization Header
