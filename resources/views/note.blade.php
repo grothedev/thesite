@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html >
 	<center>
-	{{ Form::open( array('action' => 'SiteController@appendThought') ) }}
-		{{ Form::hidden('tag', $t) }}
-		{{ Form::textarea('text') }}
-		{{ Form::submit('append thought') }}
-	{{ Form::close() }}
+	<form method = "POST" action = "/n">
+		<input type="hidden" value = {{ $t }} />
+		<textarea name="text" />
+		<button type = "submit">Append Thought</button>
+	</form>
 	</center>
 </html>
