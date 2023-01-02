@@ -141,17 +141,6 @@ class SiteController extends Controller
 		return view('map', compact($res));
 	}
 
-	/**
-	 * display music folder if authenticated
-	 */
-	public function music(){
-		if (Auth::check() && Auth::user()->name == "admin"){//} && Auth::user()->name == 'music'){
-			return view('music');
-		} else {
-			return redirect('login');
-		}
-	}
-
 	public function restartMCServer(Request $req){
 		if ($req->restart){
 			if ($req->password == env('MC_ADMIN_PASS')){

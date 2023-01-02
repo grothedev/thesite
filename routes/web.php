@@ -53,8 +53,6 @@ Route::get('geomat', function(){
 	return view('map');
 });
 
-//music mirror
-Route::get('mu', 'SiteController@music');
 
 Route::resource('podcasts', 'PodcastController');
 Route::get('kv', 'KVController@index');
