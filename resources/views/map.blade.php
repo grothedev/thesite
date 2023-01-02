@@ -20,12 +20,11 @@
         <div class = "infowindow">
         </div>
         <div class = "row">
-            {{ Form::open(  ) }}
+            <form>
                 <h2>What are you looking for?</h2>
-                Node Type {{ Form::select('nodetype') }} (e.g. Recycling Deposit, Garden, Tool Library)<br> <!-- populate with node types from API -->
-                Keyword {{ Form::text('keyword') }}<br> <!-- searches for nodes of any/some type with any attr having keyword -->
-                {{ Form::submit('this button should be unnecessary and just be a loading icon for async action') }}
-            {{ Form::close() }}
+                Node Type <select></select> (e.g. Recycling Deposit, Garden, Tool Library)<br> <!-- populate with node types from API -->
+                Keyword <input type = "text" /><br> <!-- searches for nodes of any/some type with any attr having keyword -->
+            </form>
         </div>
     </div>
 </html>
