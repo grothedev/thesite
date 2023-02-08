@@ -53,6 +53,9 @@ Route::get('geomat', function(){
 	return view('map');
 });
 
+Route::get('garden', function(){
+	return view('thegarden.index');
+});
 
 Route::resource('podcasts', 'PodcastController');
 Route::get('kv', 'KVController@index');
