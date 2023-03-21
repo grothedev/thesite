@@ -3,7 +3,7 @@
 	<head>
 		<link rel = "stylesheet" href = "css/skeleton.css" />
 		<link rel = "stylesheet" href = "css/style.css" />
-		<script src = "js/util.js"></script>
+		<script type = "module" src = "js/util.js"></script>
 		<script src = "https://unpkg.com/vue@3"></script>
 		<script src = "https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		<script type="module">

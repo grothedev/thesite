@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css"> 
+<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css"/> 
+<link rel="stylesheet" href="css/style.css" />
+<script src = "https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src = "js/util.js" ></script>
 <!-- <script src = "https://cdn.tailwindcss.com"></script> -->
 <script src = "https://unpkg.com/vue@3"></script>
+<script type="module">
+    import App from "./js/GardenApp.js";
+    Vue.createApp(App).mount('#app');
+</script>
 </head>
 <html>
 <h2>Community Garden test page</h2>
@@ -44,14 +51,12 @@
     <div class = "card">
         garden B info
     </div>
+    <div class = "row" id = "colorthemetest">
+        <!-- a slider to adjust "time of day", and some text with background color to show how theme changes -->
+        <p id = "samplep">Here is the sample text. What it says I do not know. It is probably words though. Words mean things. People seem to take an interest in the matter of things. </p>
+        <input width = "800px" type = "range" id = "colorslider" min="0" max="100" v-on:input="updateColor" />
+    </div>
     @{{ content }}
 </div>
-
-
 </body>
 </html>
-<script type="module">
-    import App from "./js/GardenApp.js";
-
-    Vue.createApp(App).mount('#app');
-</script>

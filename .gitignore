@@ -20,3 +20,4 @@ public/f/*
 *.log
 package-lock.json
 phpunit.xml
+composer.lock

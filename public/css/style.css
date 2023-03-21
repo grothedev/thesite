@@ -58,3 +58,8 @@ tr{
     height: auto;
 	display: inline-block;
 }
+
+#samplep {
+	background-color: #e0a30b;
+	color: #ebcde8;
+}
