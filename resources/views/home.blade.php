@@ -35,9 +35,15 @@
   					</form>
 					</noscript>
 					<div id = "yesscript">
-						<input id = "f" multiple name="f[]" type="file">
+						<input id = "f" multiple name="f[]" type="file" v-on:change="prepareFileInput" >
 						<br>
 						<button type = "submit" v-on:click = "uploadFile">Upload</button>
+						<upload-status :files="uploadState.files">
+
+						</upload-status>
+					</div>
+					<div id = "hashtest" style="display:hidden;">
+						<input type = "text" v-on:input = "testhash" name = "hashInput" />
 					</div>
 				</div>
 			</div>
