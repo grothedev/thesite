@@ -67,6 +67,11 @@ Route::get('sheeshbb', function(){
 });
 Route::post('sheeshbb', 'SiteController@uploadImgDump');
 
+Route::get('phpi', function(){
+	print( sys_get_temp_dir());
+	print( phpinfo());
+});
+
 Route::get('vt', function(){
 
 });

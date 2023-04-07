@@ -13,7 +13,7 @@
 		<div class = "row">
 			<div class = "box" width = "70%">
 				<script type = "text/javascript">
-					const MAX_FILE_SIZE = 512000000; //512 MB
+					const MAX_FILE_SIZE = 10240000000   //512000000; //512 MB
 
 
 				</script>
