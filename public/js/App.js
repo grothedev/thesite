@@ -10,13 +10,13 @@ export default {
         };
     },
     methods: {
-        updateProgress: function(sessionID, chunkID, percent){
+        updateProgress(sessionID, chunkID, percent){
             this.uploadState.sessions.get(sessionID).percent = percent;
             this.uploadState.files = this.uploadState.sessions.entries().map((k,v)=>{
                 return { v };
             });
         },
-        startUploading: function(postDataList, index){
+        startUploading(postDataList, index){
             console.log('is this the function?');
             $.ajax({
                 url: 'http://192.168.1.202:8090/api/files',
@@ -24,9 +24,9 @@ export default {
                 data: postDataList[index],
                 processData: false,
                 contentType: false,
-                success: function(res){ //TODO send next chunk in the callback, because there's no reason to confuse things by having multiple TCP streams going
+                success: (res) => { //TODO send next chunk in the callback, because there's no reason to confuse things by having multiple TCP streams going
                     if (res['success']){
-                        this.updateProgress(res['session_id'], res['chunk_id'], res['percent']);
+                        //this.updateProgress(res['session_id'], res['chunk_id'], res['percent']);
                         if (index == postDataList.length-1){
                             console.log('file uploaded');
                         } else {
