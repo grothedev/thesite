@@ -49,7 +49,7 @@ export default {
         uploadFile(){
             $.support.cors = true;
             for (let f of $('#f')[0].files){
-                const chunkSize = 1*128*1024; //4*1024*1024; //4MB
+                const chunkSize = this.env['FILEUPLOAD_MAX_MB']*1024*1024; //convert megabyte to byte
                 const numChunksToUpload = Math.ceil(f.size / chunkSize);
                 var postDataList = new Array(); //list of FormData, each element for a chunk
                 var c = 0; //current chunk
