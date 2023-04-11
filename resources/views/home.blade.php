@@ -8,7 +8,7 @@
 		<script src = "https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		<script type="module">
 			import App from "./js/App.js";
-			Vue.createApp(App).mount('#app');
+			Vue.createApp(App, {env: @json(App\Http\Controllers\SiteController::env())}).mount('#app');
 		</script>
 	</head>
 	<center>
@@ -24,11 +24,11 @@
 
 				</script>
 				<h4>File Storage</h4>
+				<h6><a href = "f">Browse Uploaded Files</a></h6>
 				<div id = "file-form">
 					<noscript>
 					<form action = "http://grothe.ddns.net:8090/api/files" method = "POST" enctype="multipart/form-data">
 						<h6>simply upload a file/s (of total size <= 512MB) and be given a link to access it from anywhere (temporary result page is the API json because something broke)</h6>
-    					<h6><a href = "f">Uploaded Files</a></h6>
 						<input multiple name="f[]" type="file">
 						<br>
     					<button type = "submit">Submit</button>

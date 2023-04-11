@@ -6,8 +6,11 @@ export default {
             uploadState: {
                 files: [], //filename -> percent
                 sessions: new Map(), //sessionID -> file upload status
-            }
+            },
         };
+    },
+    props: {
+        env: []
     },
     methods: {
         updateProgress(sessionID, chunkID, percent){
@@ -19,7 +22,7 @@ export default {
         startUploading(postDataList, index){
             console.log('is this the function?');
             $.ajax({
-                url: 'http://192.168.1.202:8090/api/files',
+                url: this.env['FILE_UPLOAD_URL'],
                 type: 'POST',
                 data: postDataList[index],
                 processData: false,
