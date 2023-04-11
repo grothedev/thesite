@@ -13,17 +13,17 @@
           
             <input type = "text" v-model="greeting" />
             <p>{{ greeting }}</p>
-        
+            <app-button>badaboop</app-button>
         
         </div>
-        <script>
-            Vue.createApp({
-                data(){
-                    return {
-                        greeting: 'yo yo yo'
-                    };
+        <script type = "module">
+            import AppButton from "./components/AppButton.js";
+            let app = {
+                components: {
+                    'app-button': AppButton
                 }
-            }).mount('#app');
+            };
+            Vue.createApp(app).mount('#app');
         </script>
     </body>
 

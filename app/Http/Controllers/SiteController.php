@@ -14,6 +14,16 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class SiteController extends Controller
 {
+	/** 
+	* provide select environment variables to javascript
+	*/
+	public static function env(){
+		$vars = [
+			'FILE_UPLOAD_URL' => env('FILE_UPLOAD_URL')
+		];
+		return $vars;
+	}
+
     public function uploadFiles(Request $request){
 		$f = $request->file('f');
 
@@ -46,13 +56,9 @@ class SiteController extends Controller
 	//modifies img dump files with 'tag' to be presented in the gallery
 	public function uploadImgDump(Request $request){
 		$files = $request->file('f');
-		$api_url =   'http://127.0.0.1:8090/api/files'; //'http://grothe.ddns.net:8090/api/files';
+		$api_url =   env('FILES_API_URL'); //'http://grothe.ddns.net:8090/api/files';
 		// fileVar->getClientOriginalName() returns client filename
 		
-		//guzzler attempt
-		$client = new Client([
-			'base_uri' => 'http://grothe.ddns.net:8090'
-		]);
 		$mpData = [];
 		foreach ($files as $f){
 			//var_dump($f);

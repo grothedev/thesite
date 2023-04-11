@@ -3,30 +3,48 @@
 	<head>
 		<link rel = "stylesheet" href = "css/skeleton.css" />
 		<link rel = "stylesheet" href = "css/style.css" />
+		<script type = "module" src = "js/util.js"></script>
+		<script src = "https://unpkg.com/vue@3"></script>
+		<script src = "https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script type="module">
+			import App from "./js/App.js";
+			Vue.createApp(App, {env: @json(App\Http\Controllers\SiteController::env())}).mount('#app');
+		</script>
 	</head>
 	<center>
 		<h2>A Friendly Webserver</h2>
 		<h6>in Virginia</h6>
 	</center>
 	<body></body>
-	<div class = "container">
+	<div id = "app" class = "container">
 		<div class = "row">
 			<div class = "box" width = "70%">
 				<script type = "text/javascript">
 					const MAX_FILE_SIZE = 10240000000   //512000000; //512 MB
 
-
 				</script>
+				<h4>File Storage</h4>
+				<h6><a href = "f">Browse Uploaded Files</a></h6>
 				<div id = "file-form">
+					<noscript>
 					<form action = "http://grothe.ddns.net:8090/api/files" method = "POST" enctype="multipart/form-data">
-						
-						<h4>File Storage</h4>
 						<h6>simply upload a file/s (of total size <= 512MB) and be given a link to access it from anywhere (temporary result page is the API json because something broke)</h6>
-    					<h6><a href = "f">Uploaded Files</a></h6>
 						<input multiple name="f[]" type="file">
 						<br>
     					<button type = "submit">Submit</button>
   					</form>
+					</noscript>
+					<div id = "yesscript">
+						<input id = "f" multiple name="f[]" type="file" v-on:change="prepareFileInput" >
+						<br>
+						<button type = "submit" v-on:click = "uploadFile">Upload</button>
+						<upload-status :files="uploadState.files">
+
+						</upload-status>
+					</div>
+					<div id = "hashtest" style="display:hidden;">
+						<input type = "text" v-on:input = "testhash" name = "hashInput" />
+					</div>
 				</div>
 			</div>
 			<!--
