@@ -20,7 +20,8 @@ class SiteController extends Controller
 	public static function env(){
 		$vars = [
 			'FILEUPLOAD_URL' => env('FILEUPLOAD_URL'),
-			'FILEUPLOAD_MAX_MB' => env('FILEUPLOAD_MAX_MB')
+			'FILEUPLOAD_MAX_MB' => env('FILEUPLOAD_MAX_MB'),
+			'FILEUPLOAD_CHUNK_MB' => env('FILEUPLOAD_CHUNK_MB')
 		];
 		return $vars;
 	}
