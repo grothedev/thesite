@@ -51,7 +51,7 @@ export default {
             for (let f of $('#f')[0].files){
                 if (f.size > this.env['FILEUPLOAD_MAX_MB']*1024*1024){
                     console.log(`file ${f.name} too big`);
-                    alert(`Maximum upload size is ${this.env['FILEUPLOAD_MAX_MB']} + MB. ${f.name} will not upload`);
+                    alert(`Maximum upload size is ${this.env['FILEUPLOAD_MAX_MB']} MB. ${f.name} will not upload`);
                     continue;
                 }
                 const chunkSize = this.env['FILEUPLOAD_CHUNK_MB']*1024*1024; //convert megabyte to byte
