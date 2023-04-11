@@ -22,7 +22,7 @@ export default {
         startUploading(postDataList, index){
             console.log('is this the function?');
             $.ajax({
-                url: this.env['FILE_UPLOAD_URL'],
+                url: this.env['FILEUPLOAD_URL'],
                 type: 'POST',
                 data: postDataList[index],
                 processData: false,
