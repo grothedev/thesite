@@ -13,14 +13,14 @@
 			<div class = "box" width = "90%">
                 <h6>Upload some pictures</h6>
                 {{ csrf_field() }}
-                {!! Form::open( ['method' => 'POST', 'url' => env('FILES_API_URL'), 'files' => true] ) !!}
-                    {!! Form::file('f[]', ['multiple']) !!}
+                <form method = "POST" action = "{{ env('FILES_API_URL') }}" files = "true" enctype="multipart/form-data" >
+                    <input type = "file" name = "f" multiple />
                     <br>
                     <input type = "text" name = "tag" value = "sheeshbb" hidden />
                     <small>For now after you upload just hit back button then refresh</small><br>
                     <button type = "submit">Submit</button>
                     ToDo: automatically redirect to this page
-                {!! Form::close() !!}
+                </form>
             </div>
             <br>
             ToDo: add link to download all or some selection

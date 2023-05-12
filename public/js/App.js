@@ -4,8 +4,8 @@ export default {
     data() {
         return {
             uploadState: {
-                files: [], //filename -> percent
-                sessions: new Map(), //sessionID -> file upload status
+                files: [], //filename, sessionid, percent
+                 //new Map(), //sessionID -> file upload status
             },
         };
     },
@@ -14,13 +14,13 @@ export default {
     },
     methods: {
         updateProgress(sessionID, chunkID, percent){
+            console.log(this.uploadState);
             this.uploadState.sessions.get(sessionID).percent = percent;
             this.uploadState.files = this.uploadState.sessions.entries().map((k,v)=>{
                 return { v };
             });
         },
         startUploading(postDataList, index){
-            console.log('is this the function?');
             $.ajax({
                 url: this.env['FILEUPLOAD_URL'],
                 type: 'POST',
@@ -39,6 +39,7 @@ export default {
                         this.startUploading(postDataList, index);
                     }
                     console.log(res);
+                    this.updateProgress(res['session_id'], res['chunk_id'], index / (postDataList.length-1));
                 },
                 error: function(info){
                     //TODO retry?
@@ -150,6 +151,7 @@ export default {
     created(){
     },
     mounted(){
+        this.uploadState.sessions = new Map();
     }
 };
 
