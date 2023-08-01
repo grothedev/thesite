@@ -8,12 +8,14 @@
 		<script src = "https://code.jquery.com/jquery-3.6.4.min.js"></script>
 		<script type="module">
 			import App from "./js/App.js";
-			Vue.createApp(App, {env: @json(App\Http\Controllers\SiteController::env())}).mount('#app');
+			Vue.createApp(App, {
+				env: @json(App\Http\Controllers\SiteController::env()),
+			}).mount('#app');
 		</script>
 	</head>
 	<center>
 		<h2>A Friendly Webserver</h2>
-		<h6>in Virginia</h6>
+		<h6>in Iowa</h6>
 	</center>
 	<body></body>
 	<div id = "app" class = "container">
@@ -41,6 +43,7 @@
 						<upload-status :files="uploadState.files">
 
 						</upload-status>
+						<p>@{{progressText}}</p>
 					</div>
 					<div id = "hashtest" style="display:hidden;">
 						<input type = "text" v-on:input = "testhash" name = "hashInput" />
