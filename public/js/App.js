@@ -5,8 +5,11 @@ export default {
         return {
             uploadState: {
                 files: [], //filename, sessionid, percent
-                 //new Map(), //sessionID -> file upload status
+                //sessions: new Map(), //sessionID -> file upload status
             },
+            sessions: new Map(),
+            progressText: "",
+            percent: 0
         };
     },
     props: {
@@ -14,32 +17,42 @@ export default {
     },
     methods: {
         updateProgress(sessionID, chunkID, percent){
-            console.log(this.uploadState);
-            this.uploadState.sessions.get(sessionID).percent = percent;
-            this.uploadState.files = this.uploadState.sessions.entries().map((k,v)=>{
-                return { v };
-            });
+            //this.sessions.get(sessionID).percent = percent;
+            //this.sessions[sessionID].percent = percent;
+            let fs = this.uploadState.files.find((f)=> f['sessionID'] == sessionID);
+            console.log(fs);
+            fs.percent = percent;
+            console.log(this.uploadState.files);
         },
-        startUploading(postDataList, index){
+        startUploading(postDataList, chunkIndex, fileIndex){
             $.ajax({
                 url: this.env['FILEUPLOAD_URL'],
                 type: 'POST',
-                data: postDataList[index],
+                data: postDataList[chunkIndex],
                 processData: false,
                 contentType: false,
                 success: (res) => { //TODO send next chunk in the callback, because there's no reason to confuse things by having multiple TCP streams going
                     if (res['success']){
                         //this.updateProgress(res['session_id'], res['chunk_id'], res['percent']);
-                        if (index == postDataList.length-1){
+                        if (chunkIndex == postDataList.length-1){
                             console.log('file uploaded');
                         } else {
-                            this.startUploading(postDataList, index+1);
+                            this.startUploading(postDataList, chunkIndex+1);
                         }
                     } else { //retry
-                        this.startUploading(postDataList, index);
+                        this.startUploading(postDataList, chunkIndex);
                     }
-                    console.log(res);
-                    this.updateProgress(res['session_id'], res['chunk_id'], index / (postDataList.length-1));
+                    if (postDataList.length == 1){
+                        this.percent = "100";
+                        this.uploadState.files[fileIndex]['percent'] = 100;
+                    } else {
+                        this.percent = (100 * (chunkIndex / (postDataList.length-1))).toString();
+                        this.uploadState.files[fileIndex]['percent'] = (100 * (chunkIndex / (postDataList.length-1)));
+                    }
+                    console.log(this.percent);
+                    
+                    //this.updateProgress(res['session_id'], res['chunk_id'], percent);
+                    this.progressText = this.percent.toString();
                 },
                 error: function(info){
                     //TODO retry?
@@ -65,15 +78,17 @@ export default {
 
                 var errored = false;
                 const sessionID = util.hashcode(f.name+Date.now().toString());
+
                 this.uploadState.files.push({
-                    'filename': f.name,
+                    'name': f.name,
                     'sessionID': sessionID,
                     'percent': 0
                 });
-                this.uploadState.sessions.set(sessionID, {
-                            'filename': f.name,
+                this.sessions.set(sessionID, {
+                            'name': f.name,
                             'percent': 0
                 });
+                let fileIndex = this.uploadState.files.length-1; //for the progress UI. this is really not ideal. i need to figure out why maps aren't working
 
                 console.log(`beginning upload. ${numChunksToUpload} chunks, each ${chunkSize} bytes. total ${f.size}`);            
 
@@ -96,7 +111,7 @@ export default {
                 }
 
                 //now we have each of the chunks of the file as an object, so upload them one after the other
-                this.startUploading(postDataList, 0);
+                this.startUploading(postDataList, 0, fileIndex);
             }
         },
         testhash(e){
@@ -105,33 +120,29 @@ export default {
         },
         prepareFileInput(){
             console.log('preparing '+$('#f')[0].files.length+' files');
-            this.uploadState.sessions.clear();
+            this.sessions.clear();
             this.uploadState.files = [];
             for (let f of $('#f')[0].files){
                 console.log(f);
-                const chunkSize = 1*128*1024; //4*1024*1024; //4MB
-                const numChunksToUpload = Math.ceil(f.size / chunkSize);
-                var postDataList = new Array(); //list of FormData, each element for a chunk
-                var c = 0; //current chunk
-                //keep track of which chunks were successfully uploaded. experimenting with 2 different implementations
-                var chunkUploadSuccess = new Array(numChunksToUpload).fill(false); //for each index, success or failure
-                var chunksUploaded = new Array(); //a list of only the successful chunks
-
-                var errored = false;
-                const sessionID = util.hashcode(f.name+Date.now().toString());
-                
+                if (f.size > this.env['FILEUPLOAD_MAX_MB']*1024*1024){
+                    console.log(`file ${f.name} too big`);
+                    alert(`Maximum upload size is ${this.env['FILEUPLOAD_MAX_MB']} MB. ${f.name} will not upload`);
+                    continue;
+                }
+            }
+            //TODO some more UI meta info here
+            addFilesToUploadState($('#f')[0]);
+        },
+        //translate form data files into the datastructure for this application
+        addFilesToUploadState(files){
+            for (let f of files){
                 this.uploadState.files.push({
                     'name': f.name,
                     'sessionID': sessionID,
                     'percent': 0
                 });
-                this.uploadState.sessions.set(sessionID, {
-                            'name': f.name,
-                            'percent': 0
-                });
-                console.log(`file ${f.name}. ${numChunksToUpload} chunks, each ${chunkSize} bytes. total ${f.size}`);
             }
-        },
+        }
     },
     components: {
         'upload-status': {
@@ -140,7 +151,7 @@ export default {
                     {{file.name}} : {{file.percent}}
                 </li>`,
             props: {
-                files: []
+                files: [],
             }
         }
     },
@@ -151,7 +162,7 @@ export default {
     created(){
     },
     mounted(){
-        this.uploadState.sessions = new Map();
+        //this.uploadState.sessions = new Map();
     }
 };
 
