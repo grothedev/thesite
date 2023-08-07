@@ -72,6 +72,7 @@ Route::get('phpi', function(){
 	print( sys_get_temp_dir());
 	print( phpinfo());
 });
+Route::get('vidstream', 'SiteController@streamVideo');
 
 Route::get('vt', function(){
 
