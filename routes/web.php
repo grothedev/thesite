@@ -68,6 +68,8 @@ Route::get('sheeshbb', function(){
 });
 Route::post('sheeshbb', 'SiteController@uploadImgDump');
 
+Route::get('vidstream', 'SiteController@streamVideo');
+
 Route::get('vt', function(){
 
 });

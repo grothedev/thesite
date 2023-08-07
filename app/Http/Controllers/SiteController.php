@@ -165,4 +165,19 @@ class SiteController extends Controller
 	public function cancelRestartMCServer(Request $req){
 		exec('/srv/mc/scripts/cancelShutdownMCServer.sh');
 	}
+
+	public function streamVideo(){
+		//TODO auth
+		$cmd = "ffmpeg -f v4l2 -i /dev/video0 -f mpegts -"; //capture video from device and send to stdout
+		return response()->stream(function() use ($cmd){
+			$fh = popen($cmd, 'r'); //filehandle
+			while (!feof($fh)){
+				echo fread($fh, 1024);
+				flush();
+			}
+			pclose($fh);
+		}, 200, [
+			'Content-Type' => 'video/mpeg',
+		]);
+	}
 }
