@@ -40,6 +40,8 @@
 						<input id = "f" multiple name="f[]" type="file" v-on:change="prepareFileInput" >
 						<br>
 						<button type = "submit" v-on:click = "uploadFile">Upload</button>
+						<br>
+						<p>Chunked uploading may or may not be working. Also the frontend is still under construction, so you're better off checking the dev console to see if a file upload was successful.</p> 
 						<upload-status :files="uploadState.files">
 
 						</upload-status>
@@ -52,8 +54,8 @@
 			</div>
 			<div class = "box">
 				<a name = "lemmy"></a>
-				<a href = "http://goob.ddns.net:7373"><h4>Lemmy</h4></a>
-				<p>I started hosting a Lemmy instance in August of 2023. <a href = "http://goob.ddns.net:7373">Check it out.</a></p>
+				<h4>Lemmy</h4>
+				<p>I started hosting a Lemmy instance in August of 2023, on port 7373 of this server. <a href = "http://goob.ddns.net:7373">Check it out.</a></p>
 			</div>
 			<!--
 			<div class = "box">
