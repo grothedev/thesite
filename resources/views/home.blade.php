@@ -84,11 +84,10 @@
 				<a href = "https://discord.gg/akXYxAR">Discord Server: https://discord.gg/akXYxAR</a>
 			</div>
 			-->
-			<div class = "box">
-				<!-- <h5>What's with the "ddns.net" ?</h5>
-				<p>ddns.net is a free domain name provided by <a href = "https://noip.com">No-IP</a>. I find it more convenient than always having to type <a href = "http://173.24.176.217">173.24.176.217</a> into the address bar.</p> -->
-				<p><h5 style = "display: inline-block;">Questions, concerns, suggesitons?</h5> <a href = "mailto:grothe.tr@gmail.com">Email me</a>.</p>
-			</div>
+			<!--
+			<div class = "box"> TODO comment box
+				<p><h5 style = "display: inline-block;">Questions, concerns, suggesitons?</h5>
+			</div>-->
 
 			<center>
 			@auth
