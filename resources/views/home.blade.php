@@ -50,6 +50,11 @@
 					</div>
 				</div>
 			</div>
+			<div class = "box">
+				<a name = "lemmy"></a>
+				<a href = "http://goob.ddns.net:7373"><h4>Lemmy</h4></a>
+				<p>I started hosting a Lemmy instance in August of 2023. <a href = "http://goob.ddns.net:7373">Check it out.</a></p>
+			</div>
 			<!--
 			<div class = "box">
 				<a name = "verum"></a>
@@ -60,7 +65,7 @@
 			<div class = "box">
 				<a name = "pod"></a>
 				<h4>Podcast</h4>
-				<p>I hosted a few podcasts when living in Ames. <a href =  "podcasts">Check it out.</a></p>
+				<p>I did a few podcasts with some friends a while back. <a href =  "podcasts">Check it out.</a></p>
 				<!-- <audio controls src = "http://gdev.ddns.net:8899/stream.mp3"></audio> -->
 			</div>
 
