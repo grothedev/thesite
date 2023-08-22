@@ -5,6 +5,13 @@
 	background-color: #efefef;
 }
 
+.section{
+	border: dotted grey 1px;
+	padding: 2rem;
+	margin: .5rem;
+	background-color: #f3f3f3;
+}
+
 .writing-listitem{
 	padding: 2rem 10rem 2rem 10rem;
 }

@@ -168,6 +168,7 @@ class SiteController extends Controller
 
 	public function streamVideo(){
 		//TODO auth
+		//TODO accept from any client
 		$cmd = "ffmpeg -f v4l2 -i /dev/video0 -f mpegts -"; //capture video from device and send to stdout
 		return response()->stream(function() use ($cmd){
 			$fh = popen($cmd, 'r'); //filehandle

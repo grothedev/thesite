@@ -27,21 +27,26 @@
 				</script>
 				<h4>File Storage</h4>
 				<h6><a href = "f">Browse Uploaded Files</a></h6>
-				<div id = "file-form">
-					<noscript>
-					<form action = "http://grothe.ddns.net:8090/api/files" method = "POST" enctype="multipart/form-data">
-						<h6>simply upload a file/s (of total size <= 512MB) and be given a link to access it from anywhere (temporary result page is the API json because something broke)</h6>
+				<div id = "file-form-old" class = "section">
+					<h5>Standard File Upload</h5>
+					<form action = "{{ env('FILEUPLOAD_URL') }}" method = "POST" enctype="multipart/form-data">
+						<h6>simply upload a file/s (of total size <= 512MB) and be given a link to access it from anywhere</h6>
 						<input multiple name="f[]" type="file">
+						<input hidden="true" name="htmlresponse" value="1" />
 						<br>
-    					<button type = "submit">Submit</button>
-  					</form>
-					</noscript>
+						<button type = "submit">Submit</button>
+					</form>
+				</div>
+				<div id = "file-form" class = "section">
+					<h5>Chunked File Upload (Javascript) -- Out of Order. Under Construction.</h5>
+					<h6>use this if you are uploading large files</h6>
 					<div id = "yesscript">
 						<input id = "f" multiple name="f[]" type="file" v-on:change="prepareFileInput" >
 						<br>
-						<button type = "submit" v-on:click = "uploadFile">Upload</button>
+						<!-- <button enabled="false" type = "submit" v-on:click = "uploadFile">Upload</button> -->
+						<button enabled="false" type = "submit" onclick = "alert('currently not available! sorry!')">Upload</button>
 						<br>
-						<p>Chunked uploading may or may not be working. Also the frontend is still under construction, so you're better off checking the dev console to see if a file upload was successful.</p> 
+						<!--<p>Chunked uploading may or may not be working, as it is currently under construction. Also the frontend is still under construction, so you're better off checking the dev console to see if a file upload was successful.</p> -->
 						<upload-status :files="uploadState.files">
 
 						</upload-status>
