@@ -60,6 +60,9 @@ export default {
                 }
             });
         },
+        uploadChunk(chunkData, chunkIndex){
+
+        },
         uploadFile(){
             $.support.cors = true;
             for (let f of $('#f')[0].files){
@@ -112,6 +115,9 @@ export default {
 
                 //now we have each of the chunks of the file as an object, so upload them one after the other
                 this.startUploading(postDataList, 0, fileIndex);
+                for (c = 0; c < postDataList.length; c++){
+                    this.uploadChunk(postDataList[c], c);
+                }
             }
         },
         testhash(e){
