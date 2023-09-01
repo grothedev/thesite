@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,12 @@ Route::get('kv/{k}', 'KVController@show');
 Route::post('kv', 'KVController@store');
 Route::get('kvt/{k}', 'KVController@getTimestamp');
 
+Route::get('northern-mn-2023', function(Request $req){
+	$slow = false; //save bandwidth by not automatically loading all content
+	if (isset($req->s) && $req->s != '0'){ $slow = true; }
+	$imgdir = 'nmn2023';
+	return view('simpleimgview', compact('imgdir', 'slow'));
+});
 Route::get('sheeshbb', function(){
 	return view('imgdump');
 });
@@ -72,7 +79,7 @@ Route::get('phpi', function(){
 	print( sys_get_temp_dir());
 	print( phpinfo());
 });
-Route::get('vidstream', 'SiteController@streamVideo');
+//Route::get('vidstream', 'SiteController@streamVideo');
 
 Route::get('vt', function(){
 
